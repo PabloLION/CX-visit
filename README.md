@@ -1,9 +1,12 @@
 # CX-visit
 
-Barcelona itinerary picker (Chinese) for a 4-person trip, 29 Sep – 3 Oct 2026.
-Published as a static page via GitHub Pages.
+A one-page Barcelona itinerary picker (Chinese), for a 4-person trip, 29 Sep – 3 Oct 2026.
 
-Contains no booking codes, PINs, addresses or personal data — those live only in
-the private source repository and never enter this build.
+`index.html` is entirely self-contained — CSS, data and all photos are inlined,
+so it works offline and can be forwarded as a single file.
 
-Source and generator: manifold worktree `___CX-visit/` (`build.py` + `data/itinerary.json`).
+Visitors tick the places they want and the page exports their choices as JSON.
+Restaurant scores come from Google and TheFork and are dated in the footer.
+
+No booking references, PINs, addresses or personal data are included; the only
+street addresses are the public entrances of the monuments themselves.
