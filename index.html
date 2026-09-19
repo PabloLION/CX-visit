@@ -1,0 +1,1230 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>巴塞罗那行程</title>
+<style>
+:root{color-scheme:light;--bg:#fbfaf7;--card:#fff;--ink:#1b1a17;--muted:#6f6b64;--line:#e7e3db;
+--accent:#b4451f;--soft:#fdf2ec;--warn:#8a5a00;--warnsoft:#fff8e6;--ok:#2f6b4f;--oksoft:#eef6f1;--sel:#fff0e6}
+/* system dark, unless the reader has explicitly chosen light */
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){color-scheme:dark;--bg:#141310;--card:#1e1b17;--ink:#f2eee6;--muted:#aaa49a;--line:#37332d;--accent:#f59267;--soft:#2c1e16;--warn:#e6b856;--warnsoft:#2e2513;--ok:#86cba7;--oksoft:#17281f;--sel:#3a2619}}
+/* explicit choice wins in both directions */
+:root[data-theme="dark"]{color-scheme:dark;--bg:#141310;--card:#1e1b17;--ink:#f2eee6;--muted:#aaa49a;--line:#37332d;--accent:#f59267;--soft:#2c1e16;--warn:#e6b856;--warnsoft:#2e2513;--ok:#86cba7;--oksoft:#17281f;--sel:#3a2619}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+.part,h2[id],.day{scroll-margin-top:64px}
+body{margin:0;background:var(--bg);color:var(--ink);line-height:1.7;font-size:16px;
+font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;
+-webkit-text-size-adjust:100%;padding-bottom:78px}
+.wrap{max-width:760px;margin:0 auto;padding:0 16px 24px}
+header{padding:26px 0 10px}
+h1{font-size:29px;margin:0 0 4px;letter-spacing:-.4px}
+.sub-t{color:var(--muted);font-size:14px}
+.lead{margin:12px 0 0;padding:12px 14px;background:var(--soft);border-left:3px solid var(--accent);
+border-radius:0 8px 8px 0;font-size:14.5px}
+.who{margin:12px 0 0;display:flex;align-items:center;gap:8px;font-size:14px}
+.who input{flex:1;font:inherit;font-size:15px;padding:8px 11px;border:1px solid var(--line);
+border-radius:8px;background:var(--card);color:var(--ink);min-width:0}
+nav{position:sticky;top:0;z-index:9;background:var(--bg);border-bottom:1px solid var(--line);
+padding:8px 0 8px 16px;margin:14px -16px 0;overflow-x:auto;white-space:nowrap}
+nav a{display:inline-block;padding:4px 11px;margin-right:4px;border:1px solid var(--line);
+border-radius:99px;font-size:13px;color:var(--ink);text-decoration:none;background:var(--card)}
+h2{font-size:21px;margin:34px 0 4px;padding-bottom:6px;border-bottom:2px solid var(--accent)}
+h4{font-size:13px;margin:0 0 8px;color:var(--muted);font-weight:700;letter-spacing:.4px}
+.hint{font-weight:400;font-size:12px;letter-spacing:0;opacity:.85}
+.pintro{font-size:14px;color:var(--muted);margin:8px 0 14px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px;margin:10px 0}
+.q h4{font-size:15px;color:var(--ink);margin-bottom:9px}
+.qopts{display:flex;flex-direction:column;gap:6px}
+.qo{display:flex;gap:9px;align-items:flex-start;padding:8px 10px;border:1px solid var(--line);
+border-radius:9px;cursor:pointer;font-size:14px}
+.qo:has(input:checked){background:var(--sel);border-color:var(--accent)}
+.qo input{margin:5px 0 0;accent-color:var(--accent)}
+.filters{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:12px;position:sticky;top:44px;z-index:8;
+background:var(--bg);padding:8px 0}
+.fchip{font:inherit;font-size:12.5px;padding:4px 12px;border-radius:99px;border:1px solid var(--line);
+background:var(--card);color:var(--muted);cursor:pointer}
+.fchip.on{background:var(--accent);border-color:var(--accent);color:#fff;font-weight:700}
+.zgroup{margin:16px 0}
+.zhead{display:flex;justify-content:space-between;align-items:baseline;gap:10px;flex-wrap:wrap;
+padding:8px 12px;background:var(--soft);border-radius:9px;margin-bottom:8px}
+.zn{font-weight:700;font-size:15px;color:var(--accent)}
+.zm{font-size:12px;color:var(--muted)}
+.opts{display:flex;flex-direction:column;gap:7px}
+.thumb{width:92px;height:70px;object-fit:cover;border-radius:8px;flex:0 0 auto;background:var(--line)}
+.rthumb{width:74px;height:58px;object-fit:cover;border-radius:7px;flex:0 0 auto;background:var(--line)}
+.rwrap{border:1px solid var(--line);border-radius:10px;overflow:hidden;background:var(--bg)}
+.rwrap.istop{border-color:var(--accent);border-width:2px}
+.rwrap:has(input:checked){background:var(--sel);border-color:var(--accent)}
+.rwrap .rcard{border:0;border-radius:0;background:transparent}
+.rts{display:flex;gap:6px;flex-wrap:wrap;margin:2px 0 1px}
+.rt{font-size:11.5px;font-weight:700;padding:1px 8px;border-radius:99px;border:1px solid}
+.rt i{font-style:normal;font-weight:400;opacity:.7}
+.rt.fork{color:#1b7f5a;border-color:#1b7f5a;background:var(--oksoft)}
+.rt.goog{color:#b4451f;border-color:var(--accent);background:var(--soft)}
+.rt.none{color:var(--muted);border-color:var(--line);font-weight:400}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .rt.fork{color:#86cba7;border-color:#86cba7}}
+:root[data-theme="dark"] .rt.fork{color:#86cba7;border-color:#86cba7}
+/* photos are shot for light backgrounds; take the glare off in dark */
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) img{filter:brightness(.88) saturate(.95)}}
+:root[data-theme="dark"] img{filter:brightness(.88) saturate(.95)}
+.theme{display:flex;gap:0;border:1px solid var(--line);border-radius:99px;overflow:hidden;flex:0 0 auto}
+.theme button{font:inherit;font-size:12px;padding:5px 11px;border:0;background:var(--card);
+color:var(--muted);cursor:pointer;line-height:1.2}
+.theme button+button{border-left:1px solid var(--line)}
+.theme button.on{background:var(--accent);color:#fff;font-weight:700}
+.links{display:flex;gap:6px;padding:0 11px 10px;flex-wrap:wrap}
+.ln-btn{font-size:12px;font-weight:700;padding:3px 10px;border-radius:99px;
+border:1px solid var(--line);color:var(--accent);text-decoration:none;background:var(--card)}
+.ln-btn:hover{border-color:var(--accent)}
+.chef .chef-body{font-size:14px;color:var(--muted);margin:0 0 8px}
+.chef .links{padding:10px 0 0}
+.opt{display:flex;gap:10px;align-items:flex-start;padding:10px 12px;border:1px solid var(--line);
+border-radius:10px;background:var(--card)}
+.opt:has(input[value=yes]:checked){background:var(--oksoft);border-color:var(--ok)}
+.opt:has(input[value=no]:checked){opacity:.45}
+.opt.hide{display:none}
+.opt-main{flex:1;min-width:0}
+.opt-top{display:flex;align-items:baseline;gap:7px;flex-wrap:wrap}
+.cat{font-size:11px;color:var(--muted);border:1px solid var(--line);border-radius:99px;padding:0 6px}
+.opt-meta{font-size:12.5px;color:var(--muted)}
+.opt-why{font-size:13.5px;color:var(--muted);margin-top:2px}
+.chip{font-size:11px;font-weight:700;padding:0 7px;border-radius:99px;border:1px solid var(--line);color:var(--muted)}
+.chip.rec,.chip.gem{background:var(--oksoft);color:var(--ok);border-color:var(--ok)}
+.chip.lock{background:var(--soft);color:var(--accent);border-color:var(--accent)}
+.chip.sun{background:var(--warnsoft);color:var(--warn);border-color:var(--warn)}
+.pick{display:flex;flex-direction:column;gap:4px;flex:0 0 auto}
+.pick input{position:absolute;opacity:0;width:0;height:0}
+.pick span{display:block;font-size:12px;font-weight:700;padding:3px 10px;border-radius:99px;
+border:1px solid var(--line);color:var(--muted);cursor:pointer;text-align:center;white-space:nowrap}
+.pick input:checked+.y{background:var(--ok);border-color:var(--ok);color:#fff}
+.pick input:checked+.n{background:var(--muted);border-color:var(--muted);color:var(--bg)}
+.pick.locked{font-size:11px;font-weight:700;color:var(--accent);padding-top:4px}
+.day{background:var(--card);border:1px solid var(--line);border-radius:14px;margin:14px 0;
+overflow:hidden;scroll-margin-top:52px}
+.day-head{background:var(--soft);padding:12px 15px;border-bottom:1px solid var(--line);
+display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;align-items:center}
+.dd{font-size:17px;font-weight:700} .dt{font-size:14px;color:var(--accent);font-weight:600}
+.load{font-size:12px;padding:1px 10px;border-radius:99px;border:1px solid var(--line);color:var(--muted)}
+.day-body{padding:12px 15px 16px}
+.intro{font-size:14.5px;color:var(--muted);margin:0 0 12px}
+ul.locked{list-style:none;padding:0;margin:0 0 14px}
+ul.locked li{display:grid;grid-template-columns:82px 1fr;gap:10px;padding:7px 0;
+border-bottom:1px dashed var(--line)}
+ul.locked li:last-child{border-bottom:0}
+.lt{color:var(--accent);font-weight:700;font-size:14px;font-variant-numeric:tabular-nums}
+.ln{color:var(--muted);font-size:13px}
+.nolock{font-size:13.5px;color:var(--ok);background:var(--oksoft);padding:7px 11px;
+border-radius:8px;margin-bottom:14px}
+.meal-slot{margin-bottom:12px}
+.slot{font-size:12px;font-weight:700;color:var(--muted);margin-bottom:5px}
+.rlist{display:flex;flex-direction:column;gap:6px}
+.rcard{display:flex;gap:9px;border:1px solid var(--line);border-radius:10px;padding:9px 11px;
+background:var(--bg);cursor:pointer}
+.rcard:has(input:checked){background:var(--sel);border-color:var(--accent)}
+.rcard.istop{border-color:var(--accent);border-width:2px;background:var(--soft)}
+.toptag{font-size:10.5px;font-weight:700;padding:1px 7px;border-radius:99px;
+background:var(--accent);color:#fff;white-space:nowrap}
+.gap{background:var(--soft);border-left:3px solid var(--accent);padding:10px 12px;
+border-radius:0 8px 8px 0;margin:0 0 14px}
+.gap h4{margin:0 0 5px;color:var(--accent)}
+.gap ul{margin:0;padding-left:19px;font-size:13.5px;color:var(--muted)}
+.siesta{background:var(--oksoft);border-left:3px solid var(--ok);padding:9px 12px;
+border-radius:0 8px 8px 0;font-size:13.5px;margin:0 0 14px}
+.rcard input{margin:5px 0 0;accent-color:var(--accent);flex:0 0 auto}
+.rbody{display:flex;flex-direction:column;min-width:0}
+.rtop{display:flex;justify-content:space-between;align-items:baseline;gap:8px;flex-wrap:wrap}
+.rprice{font-size:12.5px;color:var(--accent);font-weight:700}
+.star{color:var(--ok);font-size:10px}
+.rmeta{font-size:12.5px;color:var(--muted)}
+.rnote{font-size:13px;margin-top:2px}
+.bk{border-top:1px solid var(--line);padding-top:12px;margin-top:12px}
+.bk:first-child{border-top:0;padding-top:0;margin-top:0}
+.bk.pending{background:var(--warnsoft);margin:12px -14px 0;padding:12px 14px}
+.bk-top{display:flex;justify-content:space-between;align-items:baseline;gap:10px}
+.bk-date{font-size:13px;color:var(--muted)}
+.bk-time{font-size:19px;font-weight:700;color:var(--accent);font-variant-numeric:tabular-nums}
+.bk-meta{font-size:13px;color:var(--muted)}
+.bk-notes{margin:8px 0 0;padding-left:18px;font-size:13.5px}
+table{width:100%;border-collapse:collapse;font-size:14px}
+th,td{text-align:left;padding:7px 6px;border-bottom:1px solid var(--line);vertical-align:top}
+th{color:var(--muted);font-size:12.5px}
+.tn{color:var(--muted);font-size:12.5px}
+.times{display:flex;gap:18px;flex-wrap:wrap;font-size:14px}
+textarea{width:100%;font:inherit;font-size:14px;padding:9px 11px;border:1px solid var(--line);
+border-radius:9px;background:var(--bg);color:var(--ink);resize:vertical}
+.drop{border-left:3px solid var(--line);padding-left:12px;margin:14px 0}
+.dr{font-size:13.5px;color:var(--muted);margin-top:2px}
+.dv{font-size:13px;color:var(--accent);margin-top:4px}
+.tip b{font-size:14px} .tip p{margin:2px 0 14px;font-size:13.5px;color:var(--muted)}
+.dock{position:fixed;left:0;right:0;bottom:0;z-index:20;background:var(--card);
+border-top:1px solid var(--line);padding:10px 16px calc(10px + env(safe-area-inset-bottom));
+display:flex;gap:8px;align-items:center}
+.dock .cnt{font-size:12.5px;color:var(--muted);flex:1;min-width:0}
+.dock button{font:inherit;font-size:14px;font-weight:700;padding:10px 15px;border-radius:9px;
+border:1px solid var(--line);background:var(--bg);color:var(--ink);cursor:pointer;white-space:nowrap}
+.dock button.go{background:var(--accent);border-color:var(--accent);color:#fff}
+dialog{border:1px solid var(--line);border-radius:14px;padding:0;max-width:92vw;width:560px;
+background:var(--card);color:var(--ink)}
+dialog::backdrop{background:rgba(0,0,0,.45)}
+.dlg{padding:16px} .dlg h3{margin:0 0 6px;font-size:17px}
+.dlg p{margin:0 0 10px;font-size:13.5px;color:var(--muted)}
+.dlg textarea{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:12px;height:230px}
+.dlg .row{display:flex;gap:8px;margin:10px 0 0;flex-wrap:wrap;align-items:center}
+.dlg .row.big{margin-bottom:10px}
+.dlg .row.big button{flex:1;min-width:150px;padding:12px}
+footer{margin-top:36px;padding-top:14px;border-top:1px solid var(--line);color:var(--muted);font-size:12.5px}
+@media print{nav,.dock,.pick,.filters{display:none} .day,.opt{break-inside:avoid} body{padding-bottom:0}}
+</style>
+</head>
+<body>
+<script>
+/* runs before paint so the page never flashes the wrong theme */
+(function () {
+  var t;
+  try { t = localStorage.getItem('cx-visit-theme'); } catch (e) {}
+  if (t === 'dark' || t === 'light') document.documentElement.dataset.theme = t;
+})();
+</script>
+<div class="wrap">
+
+<header>
+  <h1>巴塞罗那行程</h1>
+  <div class="sub-t">2026年9月29日 – 10月3日 · 4人 · 4晚</div>
+  <div class="lead">分三步：先说口味，再挑想去的地方，最后挑吃的。挑完点右下角生成 JSON 发回来。<br>没选的默认「都行」。不用每一条都表态，把明显想去和明显不想去的点掉就够了。</div>
+  <div class="who"><label for="who">你是</label>
+    <input id="who" placeholder="写个名字，方便对上是谁选的">
+    <span class="theme" id="theme" role="group" aria-label="配色">
+      <button type="button" data-t="auto" title="跟随系统">自动</button>
+      <button type="button" data-t="light" title="浅色">浅</button>
+      <button type="button" data-t="dark" title="深色">深</button>
+    </span></div>
+</header>
+
+<nav><a href="#p1">① 口味</a><a href="#p2">② 想去哪</a><a href="#p3">③ 每天 + 吃</a>
+<a href="#tickets">票</a><a href="#cut">砍掉的</a><a href="#tips">提示</a></nav>
+
+<section class="part" id="p1"><h2>第一步 · 口味</h2><p class="pintro">这几题决定整体节奏，比单个景点重要。</p><div class="card q"><h4>每天想走多少？</h4><div class="qopts"><label class="qo"><input type="radio" name="s:pace" value="easy"><span>轻松：一天 2–3 个点，中间要回去躺一下</span></label><label class="qo"><input type="radio" name="s:pace" value="normal"><span>正常：一天 4–5 个点</span></label><label class="qo"><input type="radio" name="s:pace" value="packed"><span>尽量塞满，累点没关系</span></label></div></div><div class="card q"><h4>早上几点能出门？</h4><div class="qopts"><label class="qo"><input type="radio" name="s:wake" value="early"><span>8 点前</span></label><label class="qo"><input type="radio" name="s:wake" value="mid"><span>9–10 点</span></label><label class="qo"><input type="radio" name="s:wake" value="late"><span>11 点以后</span></label></div></div><div class="card q"><h4>博物馆一天能连看几个？</h4><div class="qopts"><label class="qo"><input type="radio" name="s:museum_stamina" value="one"><span>一个就够，看多了累</span></label><label class="qo"><input type="radio" name="s:museum_stamina" value="two"><span>两个可以</span></label><label class="qo"><input type="radio" name="s:museum_stamina" value="many"><span>多多益善</span></label></div></div><div class="card q"><h4>晚餐想怎么吃？</h4><div class="qopts"><label class="qo"><input type="radio" name="s:dinner" value="casual"><span>随便吃，tapas 小馆就行</span></label><label class="qo"><input type="radio" name="s:dinner" value="mixed"><span>大部分随意，挑一两顿吃好的</span></label><label class="qo"><input type="radio" name="s:dinner" value="nice"><span>每顿都想吃好的</span></label></div></div><div class="card q"><h4>最想要哪些？（可多选） <span class=hint>可多选</span></h4><div class="qopts"><label class="qo"><input type="checkbox" name="s:interest" value="arch"><span>高迪和现代主义建筑</span></label><label class="qo"><input type="checkbox" name="s:interest" value="museum"><span>博物馆美术馆</span></label><label class="qo"><input type="checkbox" name="s:interest" value="food"><span>吃，吃是重点</span></label><label class="qo"><input type="checkbox" name="s:interest" value="beach"><span>海滩放空</span></label><label class="qo"><input type="checkbox" name="s:interest" value="view"><span>登高看全城</span></label><label class="qo"><input type="checkbox" name="s:interest" value="local"><span>本地生活、老街区</span></label><label class="qo"><input type="checkbox" name="s:interest" value="shop"><span>购物</span></label><label class="qo"><input type="checkbox" name="s:interest" value="night"><span>夜生活、演出</span></label></div></div><div class="card"><h4>有没有必须去的？这里写</h4><textarea name="n:must" rows="2" placeholder="不在下面列表里也没关系，写上就行"></textarea></div></section>
+<section class="part" id="p2"><h2>第二步 · 想去哪些</h2>
+      <p class="pintro">按区域分组 —— 同一组里的点彼此都很近，安排在同一天最省时间。
+      不用每条都表态，把明显想去和明显不想去的点掉就够了。</p>
+      <div class="filters"><button class="fchip on" data-cat="">全部</button><button class="fchip" data-cat="建筑">建筑</button><button class="fchip" data-cat="博物馆">博物馆</button><button class="fchip" data-cat="街区">街区</button><button class="fchip" data-cat="景观">景观</button><button class="fchip" data-cat="市场">市场</button><button class="fchip" data-cat="演出">演出</button><button class="fchip" data-cat="海滩">海滩</button></div><div class="zgroup" data-zone="A">
+          <div class="zhead"><span class="zn">圣家堂 / 上 Eixample</span>
+            <span class="zm">3 个 · 博物馆 0 · 全看约 3 小时 45 分</span></div>
+          <div class="opts">
+    <div class="opt lock" data-cat="建筑">
+      <img class="thumb" src="img/sagrada.jpg" alt="圣家堂 + 受难立面塔楼" loading="lazy" decoding="async">
+      <div class="opt-main">
+        <div class="opt-top"><b>圣家堂 + 受难立面塔楼</b>
+          <span class="cat">建筑</span>
+          <span class="chip lock">锁定</span></div>
+        <div class="opt-meta">2 小时 · 已订</div>
+        <div class="opt-why">彩窗是全世界独一份。上午东侧蓝绿光，下午西侧橙红光</div>
+      </div><span class="pick locked">已订</span>
+    </div>
+    <div class="opt gem" data-cat="建筑">
+      <img class="thumb" src="img/santpau.jpg" alt="圣保罗医院 Recinte Modernista" loading="lazy" decoding="async">
+      <div class="opt-main">
+        <div class="opt-top"><b>圣保罗医院 Recinte Modernista</b>
+          <span class="cat">建筑</span>
+          <span class="chip gem">冷门好货</span></div>
+        <div class="opt-meta">1 小时 15 分</div>
+        <div class="opt-why">另一个世界遗产，多梅内克的现代主义建筑群。游客比圣家堂少得多。从圣家堂走 10 分钟</div>
+      </div><span class="pick">
+      <label><input type="radio" name="a:santpau" value="yes"><span class="y">想去</span></label>
+      <label><input type="radio" name="a:santpau" value="no"><span class="n">不去</span></label>
+    </span>
+    </div>
+    <div class="opt plain" data-cat="街区">
+      
+      <div class="opt-main">
+        <div class="opt-top"><b>Av. Gaudí 林荫步行街</b>
+          <span class="cat">街区</span>
+          <span class="chip plain">顺路</span></div>
+        <div class="opt-meta">30 分钟</div>
+        <div class="opt-why">拍圣家堂全景最好的角度，路上有几家不错的小店</div>
+      </div><span class="pick">
+      <label><input type="radio" name="a:avgaudi" value="yes"><span class="y">想去</span></label>
+      <label><input type="radio" name="a:avgaudi" value="no"><span class="n">不去</span></label>
+    </span>
+    </div></div></div><div class="zgroup" data-zone="B">
+          <div class="zhead"><span class="zn">格拉西亚大道 Passeig de Gràcia</span>
+            <span class="zm">4 个 · 博物馆 1 · 全看约 5 小时 15 分</span></div>
+          <div class="opts">
+    <div class="opt lock" data-cat="建筑">
+      <img class="thumb" src="img/pedrera.jpg" alt="米拉之家 La Pedrera" loading="lazy" decoding="async">
+      <div class="opt-main">
+        <div class="opt-top"><b>米拉之家 La Pedrera</b>
+          <span class="cat">建筑</span>
+          <span class="chip lock">锁定</span></div>
+        <div class="opt-meta">1 小时 45 分 · 已订</div>
+        <div class="opt-why">蝴蝶中庭、战士屋顶烟囱、阁楼抛物线拱</div>
+      </div><span class="pick locked">已订</span>
+    </div>
+    <div class="opt lock" data-cat="建筑">
+      <img class="thumb" src="img/batllo.jpg" alt="巴特罗之家 Casa Batlló" loading="lazy" decoding="async">
+      <div class="opt-main">
+        <div class="opt-top"><b>巴特罗之家 Casa Batlló</b>
+          <span class="cat">建筑</span>
+          <span class="chip lock">锁定</span></div>
+        <div class="opt-meta">1 小时 30 分 · 已订</div>
+        <div class="opt-why">高迪最像海洋生物的一栋，AR 导览做得极好</div>
+      </div><span class="pick locked">已订</span>
+    </div>
+    <div class="opt plain" data-cat="街区">
+      <img class="thumb" src="img/pgshop.jpg" alt="Passeig de Gràcia 逛街" loading="lazy" decoding="async">
+      <div class="opt-main">
+        <div class="opt-top"><b>Passeig de Gràcia 逛街</b>
+          <span class="cat">街区</span>
+          </div>
+        <div class="opt-meta">1 小时</div>
+        <div class="opt-why">Zara 全球旗舰店、Loewe 总店都在这条街</div>
+      </div><span class="pick">
+      <label><input type="radio" name="a:pgshop" value="yes"><span class="y">想去</span></label>
+      <label><input type="radio" name="a:pgshop" value="no"><span class="n">不去</span></label>
+    </span>
+    </div>
+    <div class="opt plain" data-cat="博物馆">
+      
+      <div class="opt-main">
+        <div class="opt-top"><b>塔皮埃斯基金会</b>
+          <span class="cat">博物馆</span>
+          </div>
+        <div class="opt-meta">1 小时</div>
+        <div class="opt-why">多梅内克设计的老出版社厂房，楼顶那团铁丝是地标。当代艺术，人少</div>
+      </div><span class="pick">
+      <label><input type="radio" name="a:tapies" value="yes"><span class="y">想去</span></label>
+      <label><input type="radio" name="a:tapies" value="no"><span class="n">不去</span></label>
+    </span>
+    </div></div></div><div class="zgroup" data-zone="C">
+          <div class="zhead"><span class="zn">桂尔公园 / Gràcia / Carmel</span>
+            <span class="zm">4 个 · 博物馆 0 · 全看约 7 小时 15 分</span></div>
+          <div class="opts">
+    <div class="opt rec" data-cat="建筑">
+      <img class="thumb" src="img/guell.jpg" alt="桂尔公园 纪念区" loading="lazy" decoding="async">
+      <div class="opt-main">
+        <div class="opt-top"><b>桂尔公园 纪念区</b>
+          <span class="cat">建筑</span>
+          <span class="chip rec">推荐</span></div>
+        <div class="opt-meta">2 小时 · 需订票</div>
+        <div class="opt-why">马赛克蜥蜴、百柱厅、蛇形长椅。10 月最后入场 18:30，19:30 闭园</div>
+      </div><span class="pick">
+      <label><input type="radio" name="a:guell" value="yes"><span class="y">想去</span></label>
+      <label><input type="radio" name="a:guell" value="no"><span class="n">不去</span></label>
+    </span>
+    </div>
+    <div class="opt plain" data-cat="景观">
+      <img class="thumb" src="img/tibidabo_view.jpg" alt="提比达波 圣心教堂观景台" loading="lazy" decoding="async">
+      <div class="opt-main">
+        <div class="opt-top"><b>提比达波 圣心教堂观景台</b>
+          <span class="cat">景观</span>
+          <span class="chip plain">半天</span></div>
+        <div class="opt-meta">3 小时 · 电梯 €4</div>
+        <div class="opt-why">全城最高点 512 米，比市区那几个网红观景台都高，人也少得多。教堂每天 08:00–20:15 免费进，只有上塔电梯要买票（17:30 前到）。游乐园 10 月工作日不开，但观景区照常开放。工作日上山要绕路：FGC 到 Peu del Funicular → Vallvidrera 缆车 → 111 路公交，单程约 1 小时</div>
+      </div><span class="pick">
+      <label><input type="radio" name="a:tibidabo_view" value="yes"><span class="y">想去</span></label>
+      <label><input type="radio" name="a:tibidabo_view" value="no"><span class="n">不去</span></label>
+    </span>
+    </div>
+    <div class="opt rec" data-cat="街区">
+      <img class="thumb" src="img/gracia.jpg" alt="Gràcia 老城区闲逛" loading="lazy" decoding="async">
+      <div class="opt-main">
+        <div class="opt-top"><b>Gràcia 老城区闲逛</b>
+          <span class="cat">街区</span>
+          <span class="chip rec">推荐</span></div>
+        <div class="opt-meta">1 小时 15 分</div>
+        <div class="opt-why">独立小镇气质，几个小广场，本地人多过游客</div>
+      </div><span class="pick">
+      <label><input type="radio" name="a:gracia" value="yes"><span class="y">想去</span></label>
+      <label><input type="radio" name="a:gracia" value="no"><span class="n">不去</span></label>
+    </span>
+    </div>
+    <div class="opt gem" data-cat="建筑">
+      <img class="thumb" src="img/vicens.jpg" alt="维森斯之家 Casa Vicens" loading="lazy" decoding="async">
+      <div class="opt-main">
+        <div class="opt-top"><b>维森斯之家 Casa Vicens</b>
+          <span class="cat">建筑</span>
+          <span class="chip gem">冷门好货</span></div>
+        <div class="opt-meta">1 小时</div>
+        <div class="opt-why">高迪的第一栋房子，瓷砖外墙完全不像他后来的风格。排队的人很少</div>
+      </div><span class="pick">
+      <label><input type="radio" name="a:vicens" value="yes"><span class="y">想去</span></label>
+      <label><input type="radio" name="a:vicens" value="no"><span class="n">不去</span></label>
+    </span>
+    </div></div></div><div class="zgroup" data-zone="D">
+          <div class="zhead"><span class="zn">哥特区 / 兰布拉 / Raval</span>
+            <span class="zm">9 个 · 博物馆 4 · 全看约 9 小时 5 分</span></div>
+          <div class="opts">
+    <div class="opt rec" data-cat="街区">
+      <img class="thumb" src="img/gothic.jpg" alt="哥特区漫步" loading="lazy" decoding="async">
+      <div class="opt-main">
+        <div class="opt-top"><b>哥特区漫步</b>
+          <span class="cat">街区</span>
+          <span class="chip rec">推荐</span></div>
+        <div class="opt-meta">1 小时 15 分</div>
+        <div class="opt-why">大教堂、国王广场、Sant Felip Neri（墙上还留着内战弹痕）、主教桥</div>
+      </div><span class="pick">
+      <label><input type="radio" name="a:gothic" value="yes"><span class="y">想去</span></label>
+      <label><input type="radio" name="a:gothic" value="no"><span class="n">不去</span></label>
+    </span>
+    </div>
+    <div class="opt plain" data-cat="建筑">
+      <img class="thumb" src="img/catedral.jpg" alt="巴塞罗那大教堂" loading="lazy" decoding="async">
+      <div class="opt-main">
+        <div class="opt-top"><b>巴塞罗那大教堂</b>
+          <span class="cat">建筑</span>
+          </div>
+        <div class="opt-meta">40 分钟</div>
+        <div class="opt-why">屋顶可以上去，回廊里养着 13 只鹅</div>
+      </div><span class="pick">
+      <label><input type="radio" name="a:catedral" value="yes"><span class="y">想去</span></label>
+      <label><input type="radio" name="a:catedral" value="no"><span class="n">不去</span></label>
+    </span>
+    </div>
+    <div class="opt gem" data-cat="博物馆">
+      <img class="thumb" src="img/muhba.jpg" alt="MUHBA 地下罗马城" loading="lazy" decoding="async">
+      <div class="opt-main">
+        <div class="opt-top"><b>MUHBA 地下罗马城</b>
+          <span class="cat">博物馆</span>
+          <span class="chip gem">冷门好货</span></div>
+        <div class="opt-meta">1 小时</div>
+        <div class="opt-why">走在两千年前的罗马街道上，有洗衣作坊、鱼酱厂、酿酒设施。大多数游客不知道</div>
+      </div><span class="pick">
+      <label><input type="radio" name="a:muhba" value="yes"><span class="y">想去</span></label>
+      <label><input type="radio" name="a:muhba" value="no"><span class="n">不去</span></label>
+    </span>
+    </div>
+    <div class="opt gem" data-cat="博物馆">
+      <img class="thumb" src="img/mares.jpg" alt="弗雷德里克·马雷斯博物馆" loading="lazy" decoding="async">
+      <div class="opt-main">
+        <div class="opt-top"><b>弗雷德里克·马雷斯博物馆</b>
+          <span class="cat">博物馆</span>
+          <span class="chip gem">冷门好货</span></div>
+        <div class="opt-meta">1 小时</div>
+        <div class="opt-why">一个收藏狂的私人收藏：中世纪雕塑加几万件日常小物。院子里的咖啡座是老城最舒服的角落之一</div>
+      </div><span class="pick">
+      <label><input type="radio" name="a:mares" value="yes"><span class="y">想去</span></label>
+      <label><input type="radio" name="a:mares" value="no"><span class="n">不去</span></label>
+    </span>
+    </div>
+    <div class="opt plain" data-cat="市场">
+      <img class="thumb" src="img/boqueria.jpg" alt="波盖利亚市场" loading="lazy" decoding="async">
+      <div class="opt-main">
+        <div class="opt-top"><b>波盖利亚市场</b>
+          <span class="cat">市场</span>
+          <span class="chip plain">顺路</span></div>
+        <div class="opt-meta">45 分钟</div>
+        <div class="opt-why">鲜榨果汁、火腿、市场里的小吧台。20:30 关门，周日不开</div>
+      </div><span class="pick">
+      <label><input type="radio" name="a:boqueria" value="yes"><span class="y">想去</span></label>
+      <label><input type="radio" name="a:boqueria" value="no"><span class="n">不去</span></label>
+    </span>
+    </div>
+    <div class="opt gem" data-cat="博物馆">
+      <img class="thumb" src="img/maritim.jpg" alt="海事博物馆 Museu Marítim" loading="lazy" decoding="async">
+      <div class="opt-main">
+        <div class="opt-top"><b>海事博物馆 Museu Marítim</b>
+          <span class="cat">博物馆</span>
+          <span class="chip gem">冷门好货</span></div>
+        <div class="opt-meta">1 小时 15 分</div>
+        <div class="opt-why">中世纪皇家船厂改建，里面停着一艘等比复原的加莱战船。建筑本身就值票价</div>
+      </div><span class="pick">
+      <label><input type="radio" name="a:maritim" value="yes"><span class="y">想去</span></label>
+      <label><input type="radio" name="a:maritim" value="no"><span class="n">不去</span></label>
+    </span>
+    </div>
+    <div class="opt plain" data-cat="博物馆">
+      <img class="thumb" src="img/macba.jpg" alt="MACBA 当代艺术馆" loading="lazy" decoding="async">
+      <div class="opt-main">
+        <div class="opt-top"><b>MACBA 当代艺术馆</b>
+          <span class="cat">博物馆</span>
+          </div>
+        <div class="opt-meta">1 小时 15 分</div>
+        <div class="opt-why">Richard Meier 的白色方盒子。门口广场是全欧洲有名的滑板圣地</div>
+      </div><span class="pick">
+      <label><input type="radio" name="a:macba" value="yes"><span class="y">想去</span></label>
+      <label><input type="radio" name="a:macba" value="no"><span class="n">不去</span></label>
+    </span>
+    </div>
+    <div class="opt rec" data-cat="建筑">
+      <img class="thumb" src="img/palau.jpg" alt="加泰罗尼亚音乐宫" loading="lazy" decoding="async">
+      <div class="opt-main">
+        <div class="opt-top"><b>加泰罗尼亚音乐宫</b>
+          <span class="cat">建筑</span>
+          <span class="chip rec">推荐</span></div>
+        <div class="opt-meta">1 小时 15 分</div>
+        <div class="opt-why">世界遗产。彩色玻璃穹顶从天花板垂下来，只能跟导览进。也可以直接买场音乐会</div>
+      </div><span class="pick">
+      <label><input type="radio" name="a:palau" value="yes"><span class="y">想去</span></label>
+      <label><input type="radio" name="a:palau" value="no"><span class="n">不去</span></label>
+    </span>
+    </div>
+    <div class="opt rec" data-cat="演出">
+      
+      <div class="opt-main">
+        <div class="opt-top"><b>Los Tarantos 弗拉门戈</b>
+          <span class="cat">演出</span>
+          <span class="chip rec">推荐</span></div>
+        <div class="opt-meta">40 分钟 · 需订票</div>
+        <div class="opt-why">1963 年开业，巴塞最老的 tablao。每晚四场 17:30 / 18:30 / 19:30 / 20:30</div>
+      </div><span class="pick">
+      <label><input type="radio" name="a:tarantos" value="yes"><span class="y">想去</span></label>
+      <label><input type="radio" name="a:tarantos" value="no"><span class="n">不去</span></label>
+    </span>
+    </div></div></div><div class="zgroup" data-zone="E">
+          <div class="zhead"><span class="zn">博恩 / 城堡公园 / 海边</span>
+            <span class="zm">8 个 · 博物馆 4 · 全看约 8 小时 30 分</span></div>
+          <div class="opts">
+    <div class="opt rec" data-cat="博物馆">
+      <img class="thumb" src="img/picasso.jpg" alt="毕加索博物馆" loading="lazy" decoding="async">
+      <div class="opt-main">
+        <div class="opt-top"><b>毕加索博物馆</b>
+          <span class="cat">博物馆</span>
+          <span class="chip rec">推荐</span></div>
+        <div class="opt-meta">1 小时 30 分 · 需订票</div>
+        <div class="opt-why">收藏以毕加索青年时期为主，和别处的毕加索馆完全不一样。周一闭馆</div>
+      </div><span class="pick">
+      <label><input type="radio" name="a:picasso" value="yes"><span class="y">想去</span></label>
+      <label><input type="radio" name="a:picasso" value="no"><span class="n">不去</span></label>
+    </span>
+    </div>
+    <div class="opt rec" data-cat="博物馆">
+      <img class="thumb" src="img/xocolata.jpg" alt="巧克力博物馆" loading="lazy" decoding="async">
+      <div class="opt-main">
+        <div class="opt-top"><b>巧克力博物馆</b>
+          <span class="cat">博物馆</span>
+          <span class="chip rec">推荐</span></div>
+        <div class="opt-meta">1 小时</div>
+        <div class="opt-why">门票是一块能吃的巧克力。里面有整座巧克力雕塑。离毕加索馆走 4 分钟</div>
+      </div><span class="pick">
+      <label><input type="radio" name="a:xocolata" value="yes"><span class="y">想去</span></label>
+      <label><input type="radio" name="a:xocolata" value="no"><span class="n">不去</span></label>
+    </span>
+    </div>
+    <div class="opt plain" data-cat="博物馆">
+      <img class="thumb" src="img/moco.jpg" alt="Moco 现代艺术馆" loading="lazy" decoding="async">
+      <div class="opt-main">
+        <div class="opt-top"><b>Moco 现代艺术馆</b>
+          <span class="cat">博物馆</span>
+          </div>
+        <div class="opt-meta">1 小时 15 分</div>
+        <div class="opt-why">班克斯、草间弥生、KAWS。在一栋 16 世纪老宅里，反差很有意思</div>
+      </div><span class="pick">
+      <label><input type="radio" name="a:moco" value="yes"><span class="y">想去</span></label>
+      <label><input type="radio" name="a:moco" value="no"><span class="n">不去</span></label>
+    </span>
+    </div>
+    <div class="opt plain" data-cat="建筑">
+      <img class="thumb" src="img/santamaria.jpg" alt="海洋圣母教堂 Santa Maria del Mar" loading="lazy" decoding="async">
+      <div class="opt-main">
+        <div class="opt-top"><b>海洋圣母教堂 Santa Maria del Mar</b>
+          <span class="cat">建筑</span>
+          </div>
+        <div class="opt-meta">30 分钟</div>
+        <div class="opt-why">加泰罗尼亚哥特式的极致，《海上大教堂》写的就是它。登顶要另买票</div>
+      </div><span class="pick">
+      <label><input type="radio" name="a:santamaria" value="yes"><span class="y">想去</span></label>
+      <label><input type="radio" name="a:santamaria" value="no"><span class="n">不去</span></label>
+    </span>
+    </div>
+    <div class="opt gem" data-cat="博物馆">
+      
+      <div class="opt-main">
+        <div class="opt-top"><b>博恩文化记忆中心 El Born CCM</b>
+          <span class="cat">博物馆</span>
+          <span class="chip gem">冷门好货</span></div>
+        <div class="opt-meta">45 分钟</div>
+        <div class="opt-why">老铁市场底下挖出了 1700 年被拆掉的整片街区，就地保留。进遗址区免费</div>
+      </div><span class="pick">
+      <label><input type="radio" name="a:bornccm" value="yes"><span class="y">想去</span></label>
+      <label><input type="radio" name="a:bornccm" value="no"><span class="n">不去</span></label>
+    </span>
+    </div>
+    <div class="opt plain" data-cat="街区">
+      <img class="thumb" src="img/ciutadella.jpg" alt="凯旋门 + 城堡公园" loading="lazy" decoding="async">
+      <div class="opt-main">
+        <div class="opt-top"><b>凯旋门 + 城堡公园</b>
+          <span class="cat">街区</span>
+          </div>
+        <div class="opt-meta">45 分钟</div>
+        <div class="opt-why">1888 年世博会正门，红砖摩尔风格。公园里可以划船</div>
+      </div><span class="pick">
+      <label><input type="radio" name="a:ciutadella" value="yes"><span class="y">想去</span></label>
+      <label><input type="radio" name="a:ciutadella" value="no"><span class="n">不去</span></label>
+    </span>
+    </div>
+    <div class="opt plain" data-cat="海滩">
+      <img class="thumb" src="img/beach.jpg" alt="巴塞罗内塔海滩" loading="lazy" decoding="async">
+      <div class="opt-main">
+        <div class="opt-top"><b>巴塞罗内塔海滩</b>
+          <span class="cat">海滩</span>
+          </div>
+        <div class="opt-meta">2 小时</div>
+        <div class="opt-why">10 月初水温还能下。沙滩椅要另付钱</div>
+      </div><span class="pick">
+      <label><input type="radio" name="a:beach" value="yes"><span class="y">想去</span></label>
+      <label><input type="radio" name="a:beach" value="no"><span class="n">不去</span></label>
+    </span>
+    </div>
+    <div class="opt plain" data-cat="景观">
+      
+      <div class="opt-main">
+        <div class="opt-top"><b>海滨步道走到奥林匹克港</b>
+          <span class="cat">景观</span>
+          </div>
+        <div class="opt-meta">45 分钟</div>
+        <div class="opt-why">会经过 Frank Gehry 的金色大鱼雕塑</div>
+      </div><span class="pick">
+      <label><input type="radio" name="a:portolimpic" value="yes"><span class="y">想去</span></label>
+      <label><input type="radio" name="a:portolimpic" value="no"><span class="n">不去</span></label>
+    </span>
+    </div></div></div><div class="zgroup" data-zone="F">
+          <div class="zhead"><span class="zn">蒙特惠奇 / 西班牙广场</span>
+            <span class="zm">6 个 · 博物馆 2 · 全看约 7 小时 45 分</span></div>
+          <div class="opts">
+    <div class="opt rec" data-cat="博物馆">
+      <img class="thumb" src="img/mnac.jpg" alt="MNAC 加泰罗尼亚国家艺术博物馆" loading="lazy" decoding="async">
+      <div class="opt-main">
+        <div class="opt-top"><b>MNAC 加泰罗尼亚国家艺术博物馆</b>
+          <span class="cat">博物馆</span>
+          <span class="chip rec">推荐</span></div>
+        <div class="opt-meta">2 小时</div>
+        <div class="opt-why">全世界最好的罗马式壁画收藏 —— 整座教堂的壁画被切下来搬进馆里。不进馆也能上露台看全城</div>
+      </div><span class="pick">
+      <label><input type="radio" name="a:mnac" value="yes"><span class="y">想去</span></label>
+      <label><input type="radio" name="a:mnac" value="no"><span class="n">不去</span></label>
+    </span>
+    </div>
+    <div class="opt plain" data-cat="博物馆">
+      <img class="thumb" src="img/miro.jpg" alt="米罗基金会" loading="lazy" decoding="async">
+      <div class="opt-main">
+        <div class="opt-top"><b>米罗基金会</b>
+          <span class="cat">博物馆</span>
+          </div>
+        <div class="opt-meta">1 小时 15 分</div>
+        <div class="opt-why">米罗本人捐建，Josep Lluís Sert 设计。建筑和作品一样好</div>
+      </div><span class="pick">
+      <label><input type="radio" name="a:miro" value="yes"><span class="y">想去</span></label>
+      <label><input type="radio" name="a:miro" value="no"><span class="n">不去</span></label>
+    </span>
+    </div>
+    <div class="opt plain" data-cat="街区">
+      <img class="thumb" src="img/poble.jpg" alt="西班牙村 Poble Espanyol" loading="lazy" decoding="async">
+      <div class="opt-main">
+        <div class="opt-top"><b>西班牙村 Poble Espanyol</b>
+          <span class="cat">街区</span>
+          </div>
+        <div class="opt-meta">1 小时 30 分</div>
+        <div class="opt-why">1929 世博会造的「全西班牙建筑缩影村」，有点做作但好逛好拍</div>
+      </div><span class="pick">
+      <label><input type="radio" name="a:poble" value="yes"><span class="y">想去</span></label>
+      <label><input type="radio" name="a:poble" value="no"><span class="n">不去</span></label>
+    </span>
+    </div>
+    <div class="opt plain" data-cat="景观">
+      <img class="thumb" src="img/castell.jpg" alt="蒙特惠奇城堡 + 缆车" loading="lazy" decoding="async">
+      <div class="opt-main">
+        <div class="opt-top"><b>蒙特惠奇城堡 + 缆车</b>
+          <span class="cat">景观</span>
+          </div>
+        <div class="opt-meta">2 小时</div>
+        <div class="opt-why">山顶要塞，俯瞰整个港口。缆车本身就是体验</div>
+      </div><span class="pick">
+      <label><input type="radio" name="a:castell" value="yes"><span class="y">想去</span></label>
+      <label><input type="radio" name="a:castell" value="no"><span class="n">不去</span></label>
+    </span>
+    </div>
+    <div class="opt sun" data-cat="演出">
+      <img class="thumb" src="img/fountain.jpg" alt="魔幻喷泉" loading="lazy" decoding="async">
+      <div class="opt-main">
+        <div class="opt-top"><b>魔幻喷泉</b>
+          <span class="cat">演出</span>
+          <span class="chip sun">限时</span></div>
+        <div class="opt-meta">30 分钟</div>
+        <div class="opt-why">10 月只在周四五六 21:00 / 21:30，10/11 起停演维护到 12/21。免费，人非常多</div>
+      </div><span class="pick">
+      <label><input type="radio" name="a:fountain" value="yes"><span class="y">想去</span></label>
+      <label><input type="radio" name="a:fountain" value="no"><span class="n">不去</span></label>
+    </span>
+    </div>
+    <div class="opt easy" data-cat="景观">
+      <img class="thumb" src="img/arenas.jpg" alt="Las Arenas 斗牛场顶楼" loading="lazy" decoding="async">
+      <div class="opt-main">
+        <div class="opt-top"><b>Las Arenas 斗牛场顶楼</b>
+          <span class="cat">景观</span>
+          <span class="chip easy">省力</span></div>
+        <div class="opt-meta">30 分钟</div>
+        <div class="opt-why">1900 年斗牛场改建，环形露台免费，俯瞰西班牙广场</div>
+      </div><span class="pick">
+      <label><input type="radio" name="a:arenas" value="yes"><span class="y">想去</span></label>
+      <label><input type="radio" name="a:arenas" value="no"><span class="n">不去</span></label>
+    </span>
+    </div></div></div><div class="zgroup" data-zone="G">
+          <div class="zhead"><span class="zn">格洛里耶斯 Glòries（较远）</span>
+            <span class="zm">3 个 · 博物馆 1 · 全看约 2 小时 30 分</span></div>
+          <div class="opts">
+    <div class="opt plain" data-cat="博物馆">
+      <img class="thumb" src="img/disseny.jpg" alt="设计博物馆 Museu del Disseny" loading="lazy" decoding="async">
+      <div class="opt-main">
+        <div class="opt-top"><b>设计博物馆 Museu del Disseny</b>
+          <span class="cat">博物馆</span>
+          </div>
+        <div class="opt-meta">1 小时 30 分</div>
+        <div class="opt-why">四个馆合一：平面设计、工业设计、时装、装饰艺术。建筑像一个巨大的订书机</div>
+      </div><span class="pick">
+      <label><input type="radio" name="a:disseny" value="yes"><span class="y">想去</span></label>
+      <label><input type="radio" name="a:disseny" value="no"><span class="n">不去</span></label>
+    </span>
+    </div>
+    <div class="opt plain" data-cat="建筑">
+      <img class="thumb" src="img/glories.jpg" alt="阿格巴塔 Torre Glòries 外观" loading="lazy" decoding="async">
+      <div class="opt-main">
+        <div class="opt-top"><b>阿格巴塔 Torre Glòries 外观</b>
+          <span class="cat">建筑</span>
+          <span class="chip plain">顺路</span></div>
+        <div class="opt-meta">15 分钟</div>
+        <div class="opt-why">努维尔那根子弹形状的彩色塔。晚上会变色。在设计博物馆对面</div>
+      </div><span class="pick">
+      <label><input type="radio" name="a:glories" value="yes"><span class="y">想去</span></label>
+      <label><input type="radio" name="a:glories" value="no"><span class="n">不去</span></label>
+    </span>
+    </div>
+    <div class="opt plain" data-cat="市场">
+      <img class="thumb" src="img/encants.jpg" alt="恩坎茨跳蚤市场 Els Encants" loading="lazy" decoding="async">
+      <div class="opt-main">
+        <div class="opt-top"><b>恩坎茨跳蚤市场 Els Encants</b>
+          <span class="cat">市场</span>
+          </div>
+        <div class="opt-meta">45 分钟</div>
+        <div class="opt-why">欧洲最老的跳蚤市场之一，金色镜面天花板下的露天旧货摊。周一三五六开</div>
+      </div><span class="pick">
+      <label><input type="radio" name="a:encants" value="yes"><span class="y">想去</span></label>
+      <label><input type="radio" name="a:encants" value="no"><span class="n">不去</span></label>
+    </span>
+    </div></div></div></section>
+<section class="part" id="p3"><h2>第三步 · 每天的骨架和吃什么</h2><p class="pintro">只有已订的票是固定的。等你们的选择回来之后，我再把第二步挑中的点按区域塞进这些空当里。</p><div class="day" id="d1">
+          <div class="day-head">
+            <div><div class="dd">9月29日（二）</div><div class="dt">抵达</div></div>
+            <span class="load">轻</span>
+          </div>
+          <div class="day-body">
+            <p class="intro">飞了 20 多小时。目标只有两个：把行李放下，撑到当地时间 23:00 再睡。</p>
+            <ul class="locked"><li><span class="lt">15:05</span><span><b>落地 BCN T1</b> <span class=ln>过关取行李约 40 分钟</span></span></li><li><span class="lt">约 15:45</span><span><b>出租车 → 住处</b> <span class=ln>已定：打车。T1 到达层外有出租车站，4 人带行李约 €35–40，35 分钟</span></span></li><li><span class="lt">16:00 起</span><span><b>可入住</b></span></li></ul>
+            
+            
+            <div class="meal-slot"><div class="slot">晚餐 <span class="hint">挑一个</span></div><div class="rlist"><div class="rwrap">
+              <label class="rcard">
+                <input type="radio" name="m:d1-dinner" value="windsor">
+                <img class="rthumb" src="img/r-windsor.jpg" alt="Windsor" loading="lazy" decoding="async">
+                <span class="rbody">
+                  <span class="rtop"><b>Windsor</b><span class="star" title="做过详细调研">●</span>
+                    <span class="rprice">€44</span></span>
+                  <span class="rts"><span class="rt fork">TheFork 9.4<i>/10</i> · 2080 评</span></span>
+                  <span class="rmeta">当代加泰罗尼亚 · Carrer de Còrsega 286</span>
+                  <span class="rnote">离住的地方很近。第一晚不折腾的首选</span>
+                </span></label>
+              <span class="links"><a class="ln-btn" href="https://www.thefork.es/restaurante/windsor-r24114" target="_blank" rel="noopener noreferrer">TheFork ↗</a><a class="ln-btn" href="https://www.google.com/maps/search/?api=1&amp;query=Windsor%20Barcelona" target="_blank" rel="noopener noreferrer">Google 地图 ↗</a></span></div><div class="rwrap">
+              <label class="rcard">
+                <input type="radio" name="m:d1-dinner" value="deliri">
+                <img class="rthumb" src="img/r-deliri.jpg" alt="Deliri" loading="lazy" decoding="async">
+                <span class="rbody">
+                  <span class="rtop"><b>Deliri</b><span class="star" title="做过详细调研">●</span>
+                    <span class="rprice">€45</span></span>
+                  <span class="rts"><span class="rt fork">TheFork 9.3<i>/10</i> · 957 评</span></span>
+                  <span class="rmeta">加泰罗尼亚 · Carrer de Còrsega 242</span>
+                  <span class="rnote">同一条街，风格更现代</span>
+                </span></label>
+              <span class="links"><a class="ln-btn" href="https://www.thefork.es/restaurante/deliri-r705133" target="_blank" rel="noopener noreferrer">TheFork ↗</a><a class="ln-btn" href="https://www.google.com/maps/search/?api=1&amp;query=Deliri%20Barcelona" target="_blank" rel="noopener noreferrer">Google 地图 ↗</a></span></div><div class="rwrap">
+              <label class="rcard">
+                <input type="radio" name="m:d1-dinner" value="petit-muu">
+                <img class="rthumb" src="img/r-petit-muu.jpg" alt="Petit Muu" loading="lazy" decoding="async">
+                <span class="rbody">
+                  <span class="rtop"><b>Petit Muu</b><span class="star" title="做过详细调研">●</span>
+                    <span class="rprice">€23</span></span>
+                  <span class="rts"><span class="rt fork">TheFork 9.4<i>/10</i> · 776 评</span></span>
+                  <span class="rmeta">融合菜 · Pl. del Dr. Letamendi 28</span>
+                  <span class="rnote">便宜好吃，下午还有行程时的理想午餐</span>
+                </span></label>
+              <span class="links"><a class="ln-btn" href="https://www.thefork.es/restaurante/petit-muu-r842827" target="_blank" rel="noopener noreferrer">TheFork ↗</a><a class="ln-btn" href="https://www.google.com/maps/search/?api=1&amp;query=Petit%20Muu%20Barcelona" target="_blank" rel="noopener noreferrer">Google 地图 ↗</a></span></div></div></div>
+            <div class="sub"><h4>这天想说什么</h4>
+              <textarea name="n:d1" rows="2" placeholder="想加的、想去掉的、想睡到几点…"></textarea></div>
+          </div></div><div class="day" id="d2">
+          <div class="day-head">
+            <div><div class="dd">9月30日（三）</div><div class="dt">圣家堂已锁上午</div></div>
+            <span class="load">中</span>
+          </div>
+          <div class="day-body">
+            <p class="intro">上午被票锁死，12:30 之后全天自由。桂尔公园离圣家堂打车只要 12 分钟，是顺路的。</p>
+            <ul class="locked"><li><span class="lt">10:30</span><span><b>圣家堂入场</b> <span class=ln>已订</span></span></li><li><span class="lt">11:15</span><span><b>受难立面塔楼</b> <span class=ln>已订</span></span></li></ul>
+            
+            <div class="siesta">😴 午饭后回住处午休 1 小时再出门 —— 下午的桂尔公园要走不少路。</div>
+            <div class="meal-slot"><div class="slot">午餐 <span class="hint">挑一个</span></div><div class="rlist"><div class="rwrap">
+              <label class="rcard">
+                <input type="radio" name="m:d2-lunch" value="elglop">
+                
+                <span class="rbody">
+                  <span class="rtop"><b>El Glop Gaudí</b>
+                    <span class="rprice">€25–35</span></span>
+                  <span class="rts"><span class="rt goog">Google ★4.7<i>/5</i></span></span>
+                  <span class="rmeta">加泰炭烤 graella · Carrer de València 443（圣家堂旁）</span>
+                  <span class="rnote">老牌加泰炭烤店，就在圣家堂边上。烤肉、烤蔬菜、海鲜饭都稳，份量大，人多也坐得下</span>
+                </span></label>
+              <span class="links"><a class="ln-btn" href="https://www.google.com/maps/search/?api=1&amp;query=El%20Glop%20Gaud%C3%AD%20Barcelona" target="_blank" rel="noopener noreferrer">Google 地图 ↗</a></span></div><div class="rwrap">
+              <label class="rcard">
+                <input type="radio" name="m:d2-lunch" value="bardeni">
+                
+                <span class="rbody">
+                  <span class="rtop"><b>Bardeni</b>
+                    <span class="rprice">€30–40</span></span>
+                  <span class="rts"><span class="rt none">评分点下面的链接看实时的</span></span>
+                  <span class="rmeta">肉食酒馆 · Carrer de València 454</span>
+                  <span class="rnote">炸丸子和伊比利亚烤肉出名，客人以本地人为主</span>
+                </span></label>
+              <span class="links"><a class="ln-btn" href="https://www.google.com/maps/search/?api=1&amp;query=Bardeni%20Barcelona" target="_blank" rel="noopener noreferrer">Google 地图 ↗</a></span></div><div class="rwrap">
+              <label class="rcard">
+                <input type="radio" name="m:d2-lunch" value="cafe-del-centre">
+                
+                <span class="rbody">
+                  <span class="rtop"><b>Cafè del Centre</b>
+                    <span class="rprice">€25–35</span></span>
+                  <span class="rts"><span class="rt none">评分点下面的链接看实时的</span></span>
+                  <span class="rmeta">加泰家常 · Carrer de Girona 69</span>
+                  <span class="rnote">1873 年的老咖啡馆，内部原样保留</span>
+                </span></label>
+              <span class="links"><a class="ln-btn" href="https://www.google.com/maps/search/?api=1&amp;query=Caf%C3%A8%20del%20Centre%20Barcelona" target="_blank" rel="noopener noreferrer">Google 地图 ↗</a></span></div></div></div><div class="meal-slot"><div class="slot">晚餐 <span class="hint">挑一个</span></div><div class="rlist"><div class="rwrap">
+              <label class="rcard">
+                <input type="radio" name="m:d2-dinner" value="ipar-txoko">
+                
+                <span class="rbody">
+                  <span class="rtop"><b>Ipar-Txoko</b>
+                    <span class="rprice">€40–50</span></span>
+                  <span class="rts"><span class="rt none">评分点下面的链接看实时的</span></span>
+                  <span class="rmeta">巴斯克 · Gràcia 区</span>
+                  <span class="rnote">老板口头报当日菜单。招牌 T 骨牛排、鳕鱼蛋饼。几乎没游客</span>
+                </span></label>
+              <span class="links"><a class="ln-btn" href="https://www.google.com/maps/search/?api=1&amp;query=Ipar-Txoko%20Barcelona" target="_blank" rel="noopener noreferrer">Google 地图 ↗</a></span></div><div class="rwrap">
+              <label class="rcard">
+                <input type="radio" name="m:d2-dinner" value="cafe-pages">
+                
+                <span class="rbody">
+                  <span class="rtop"><b>Café Pagès</b>
+                    <span class="rprice">€30–40</span></span>
+                  <span class="rts"><span class="rt none">评分点下面的链接看实时的</span></span>
+                  <span class="rmeta">加泰家常 · Gràcia 区</span>
+                  <span class="rnote">简单的加泰菜做到极好，本地人多</span>
+                </span></label>
+              <span class="links"><a class="ln-btn" href="https://www.google.com/maps/search/?api=1&amp;query=Caf%C3%A9%20Pag%C3%A8s%20Barcelona" target="_blank" rel="noopener noreferrer">Google 地图 ↗</a></span></div><div class="rwrap">
+              <label class="rcard">
+                <input type="radio" name="m:d2-dinner" value="lluritu">
+                
+                <span class="rbody">
+                  <span class="rtop"><b>Lluritu</b>
+                    <span class="rprice">€25–35</span></span>
+                  <span class="rts"><span class="rt none">评分点下面的链接看实时的</span></span>
+                  <span class="rmeta">海鲜小馆 · Gràcia 区</span>
+                  <span class="rnote">每日换菜单，随意不拘，海鲜 tapas 为主</span>
+                </span></label>
+              <span class="links"><a class="ln-btn" href="https://www.google.com/maps/search/?api=1&amp;query=Lluritu%20Barcelona" target="_blank" rel="noopener noreferrer">Google 地图 ↗</a></span></div></div></div>
+            <div class="sub"><h4>这天想说什么</h4>
+              <textarea name="n:d2" rows="2" placeholder="想加的、想去掉的、想睡到几点…"></textarea></div>
+          </div></div><div class="day" id="d3">
+          <div class="day-head">
+            <div><div class="dd">10月1日（四）</div><div class="dt">两栋高迪之家 + 老城</div></div>
+            <span class="load">重</span>
+          </div>
+          <div class="day-body">
+            <p class="intro">全程最满的一天：两栋高迪之家都在今天，中间隔 1.5 小时。别想在两馆之间吃正经午饭 —— 西班牙厨房 13:00 才开，12:00 进店只有游客菜单。中间喝杯咖啡、逛 Passeig de Gràcia 就好，15:00 从米拉之家出来再正式吃午饭，这才是本地人的时间。</p>
+            <ul class="locked"><li><span class="lt">10:15</span><span><b>巴特罗之家 Casa Batlló</b> <span class=ln>已订 · 约 11:45 出来</span></span></li><li><span class="lt">13:15</span><span><b>米拉之家 La Pedrera</b> <span class=ln>已订 · 只允许晚到 15 分钟内 · 约 15:00 出来</span></span></li></ul>
+            <div class="gap"><h4>⏳ 10:15 → 13:15 中间这 1.5 小时怎么过</h4><ul><li>11:45 从巴特罗之家出来，走 6 分钟到米拉之家门口先认路</li><li>Passeig de Gràcia 逛街（Zara 旗舰店、Loewe 总店都在这条街）</li><li>找家咖啡馆吃个可颂垫一下 —— 正餐留到 15:00</li><li>13:00 前回到 Provença 265 排队入场</li></ul></div>
+            <div class="siesta">😴 15:00 吃完午饭已经接近 16:30 —— 回住处睡一觉，19:00 再出门去老城和弗拉门戈。</div>
+            <div class="meal-slot"><div class="slot">午餐 <span class="hint">挑一个</span></div><div class="rlist"><div class="rwrap">
+              <label class="rcard">
+                <input type="radio" name="m:d3-lunch" value="petit-muu">
+                <img class="rthumb" src="img/r-petit-muu.jpg" alt="Petit Muu" loading="lazy" decoding="async">
+                <span class="rbody">
+                  <span class="rtop"><b>Petit Muu</b><span class="star" title="做过详细调研">●</span>
+                    <span class="rprice">€23</span></span>
+                  <span class="rts"><span class="rt fork">TheFork 9.4<i>/10</i> · 776 评</span></span>
+                  <span class="rmeta">融合菜 · Pl. del Dr. Letamendi 28</span>
+                  <span class="rnote">便宜好吃，下午还有行程时的理想午餐</span>
+                </span></label>
+              <span class="links"><a class="ln-btn" href="https://www.thefork.es/restaurante/petit-muu-r842827" target="_blank" rel="noopener noreferrer">TheFork ↗</a><a class="ln-btn" href="https://www.google.com/maps/search/?api=1&amp;query=Petit%20Muu%20Barcelona" target="_blank" rel="noopener noreferrer">Google 地图 ↗</a></span></div><div class="rwrap">
+              <label class="rcard">
+                <input type="radio" name="m:d3-lunch" value="cafe-del-centre">
+                
+                <span class="rbody">
+                  <span class="rtop"><b>Cafè del Centre</b>
+                    <span class="rprice">€25–35</span></span>
+                  <span class="rts"><span class="rt none">评分点下面的链接看实时的</span></span>
+                  <span class="rmeta">加泰家常 · Carrer de Girona 69</span>
+                  <span class="rnote">1873 年的老咖啡馆，内部原样保留</span>
+                </span></label>
+              <span class="links"><a class="ln-btn" href="https://www.google.com/maps/search/?api=1&amp;query=Caf%C3%A8%20del%20Centre%20Barcelona" target="_blank" rel="noopener noreferrer">Google 地图 ↗</a></span></div></div></div><div class="meal-slot"><div class="slot">晚餐 <span class="hint">挑一个</span></div><div class="rlist"><div class="rwrap istop">
+              <label class="rcard">
+                <input type="radio" name="m:d3-dinner" value="cera23">
+                
+                <span class="rbody">
+                  <span class="rtop"><b>Cera 23</b><span class="star" title="做过详细调研">●</span><span class="toptag">强烈推荐</span>
+                    <span class="rprice">€35–45</span></span>
+                  <span class="rts"><span class="rt goog">Google ★4.7<i>/5</i></span></span>
+                  <span class="rmeta">西班牙创意菜 · Carrer de la Cera 23（Raval / Sant Antoni）</span>
+                  <span class="rnote">招牌是火山黑米饭（上桌点火）。主人去过，强力推荐。位子少，一定要提前订</span>
+                </span></label>
+              <span class="links"><a class="ln-btn" href="https://www.thefork.com/restaurant/cera-23-r343905" target="_blank" rel="noopener noreferrer">TheFork ↗</a><a class="ln-btn" href="https://www.google.com/maps/search/?api=1&amp;query=Cera%2023%20Barcelona" target="_blank" rel="noopener noreferrer">Google 地图 ↗</a></span></div><div class="rwrap">
+              <label class="rcard">
+                <input type="radio" name="m:d3-dinner" value="cafe-academia">
+                
+                <span class="rbody">
+                  <span class="rtop"><b>Cafè de l&#x27;Acadèmia</b>
+                    <span class="rprice">€35–45</span></span>
+                  <span class="rts"><span class="rt none">评分点下面的链接看实时的</span></span>
+                  <span class="rmeta">传统加泰罗尼亚 · Plaça de Sant Just</span>
+                  <span class="rnote">藏在安静小广场上，哥特区里少见的好馆子。一定要订位</span>
+                </span></label>
+              <span class="links"><a class="ln-btn" href="https://www.google.com/maps/search/?api=1&amp;query=Caf%C3%A8%20de%20l%27Acad%C3%A8mia%20Barcelona" target="_blank" rel="noopener noreferrer">Google 地图 ↗</a></span></div><div class="rwrap">
+              <label class="rcard">
+                <input type="radio" name="m:d3-dinner" value="bar-la-plata">
+                
+                <span class="rbody">
+                  <span class="rtop"><b>Bar la Plata</b>
+                    <span class="rprice">€10–15</span></span>
+                  <span class="rts"><span class="rt none">评分点下面的链接看实时的</span></span>
+                  <span class="rmeta">老式 tapas · Carrer de la Mercè 28</span>
+                  <span class="rnote">1945 年开业，只有 4 样 tapas，站着吃。炸小鱼是招牌</span>
+                </span></label>
+              <span class="links"><a class="ln-btn" href="https://www.google.com/maps/search/?api=1&amp;query=Bar%20la%20Plata%20Barcelona" target="_blank" rel="noopener noreferrer">Google 地图 ↗</a></span></div></div></div>
+            <div class="sub"><h4>这天想说什么</h4>
+              <textarea name="n:d3" rows="2" placeholder="想加的、想去掉的、想睡到几点…"></textarea></div>
+          </div></div><div class="day" id="d4">
+          <div class="day-head">
+            <div><div class="dd">10月2日（五）</div><div class="dt">全天自由</div></div>
+            <span class="load">看你们选</span>
+          </div>
+          <div class="day-body">
+            <p class="intro">唯一一整天没有任何锁的日子。魔幻喷泉只有这天能看（10/11 起停演维护）。</p>
+            <div class="nolock">这天没有任何固定安排</div>
+            
+            <div class="siesta">😴 全天自由。中午吃完回去睡个午觉最舒服，傍晚再出门。</div>
+            <div class="meal-slot"><div class="slot">午餐 <span class="hint">挑一个</span></div><div class="rlist"><div class="rwrap">
+              <label class="rcard">
+                <input type="radio" name="m:d4-lunch" value="barcelona-grill">
+                <img class="rthumb" src="img/r-barcelona-grill.jpg" alt="Barcelona Grill" loading="lazy" decoding="async">
+                <span class="rbody">
+                  <span class="rtop"><b>Barcelona Grill</b><span class="star" title="做过详细调研">●</span>
+                    <span class="rprice">€20</span></span>
+                  <span class="rts"><span class="rt fork">TheFork 9.7<i>/10</i> · 316 评</span></span>
+                  <span class="rmeta">阿根廷烤肉 · Carrer del Rec Comtal 7</span>
+                  <span class="rnote">性价比极高，适合博恩区那天的午餐</span>
+                </span></label>
+              <span class="links"><a class="ln-btn" href="https://www.thefork.es/restaurante/barcelona-grill-steak-house-r853204" target="_blank" rel="noopener noreferrer">TheFork ↗</a><a class="ln-btn" href="https://www.google.com/maps/search/?api=1&amp;query=Barcelona%20Grill%20Barcelona" target="_blank" rel="noopener noreferrer">Google 地图 ↗</a></span></div><div class="rwrap">
+              <label class="rcard">
+                <input type="radio" name="m:d4-lunch" value="bar-del-pla">
+                
+                <span class="rbody">
+                  <span class="rtop"><b>Bar del Pla</b>
+                    <span class="rprice">€30–40</span></span>
+                  <span class="rts"><span class="rt none">评分点下面的链接看实时的</span></span>
+                  <span class="rmeta">加泰 tapas · Carrer de Montcada 2</span>
+                  <span class="rnote">就在毕加索博物馆那条街上，出来直接吃</span>
+                </span></label>
+              <span class="links"><a class="ln-btn" href="https://www.google.com/maps/search/?api=1&amp;query=Bar%20del%20Pla%20Barcelona" target="_blank" rel="noopener noreferrer">Google 地图 ↗</a></span></div></div></div><div class="meal-slot"><div class="slot">晚餐 <span class="hint">挑一个</span></div><div class="rlist"><div class="rwrap istop">
+              <label class="rcard">
+                <input type="radio" name="m:d4-dinner" value="pampagrill">
+                
+                <span class="rbody">
+                  <span class="rtop"><b>Pampa Grill Asador Argentino</b><span class="star" title="做过详细调研">●</span><span class="toptag">强烈推荐</span>
+                    <span class="rprice">€30–45</span></span>
+                  <span class="rts"><span class="rt fork">TheFork 9.2<i>/10</i></span></span>
+                  <span class="rmeta">阿根廷炭烤 asado · Carrer de Villarroel 88（Eixample）</span>
+                  <span class="rnote">主人去过好几次，强力推荐。整块炭烤牛肉配 chimichurri。巴塞好几家阿根廷烤肉 Google 评分都在 4.8 以上，这家是亲测过的那家</span>
+                </span></label>
+              <span class="links"><a class="ln-btn" href="https://www.thefork.com/restaurant/pampa-grill-r819058" target="_blank" rel="noopener noreferrer">TheFork ↗</a><a class="ln-btn" href="https://www.google.com/maps/search/?api=1&amp;query=Pampa%20Grill%20Asador%20Argentino%20Barcelona" target="_blank" rel="noopener noreferrer">Google 地图 ↗</a></span></div><div class="rwrap">
+              <label class="rcard">
+                <input type="radio" name="m:d4-dinner" value="can-sole">
+                
+                <span class="rbody">
+                  <span class="rtop"><b>Can Solé</b>
+                    <span class="rprice">€45–60</span></span>
+                  <span class="rts"><span class="rt none">评分点下面的链接看实时的</span></span>
+                  <span class="rmeta">海鲜饭 · Carrer de Sant Carles 4</span>
+                  <span class="rnote">1903 年开业，同一家族做到第四代。招牌墨鱼汁黑米饭</span>
+                </span></label>
+              <span class="links"><a class="ln-btn" href="https://www.google.com/maps/search/?api=1&amp;query=Can%20Sol%C3%A9%20Barcelona" target="_blank" rel="noopener noreferrer">Google 地图 ↗</a></span></div><div class="rwrap">
+              <label class="rcard">
+                <input type="radio" name="m:d4-dinner" value="can-ros">
+                
+                <span class="rbody">
+                  <span class="rtop"><b>Can Ros</b>
+                    <span class="rprice">€40–55</span></span>
+                  <span class="rts"><span class="rt none">评分点下面的链接看实时的</span></span>
+                  <span class="rmeta">海鲜饭 · Carrer de l&#x27;Almirall Aixada 7</span>
+                  <span class="rnote">老派，本地人认的那家。墨鱼洋蓟黑米饭</span>
+                </span></label>
+              <span class="links"><a class="ln-btn" href="https://www.google.com/maps/search/?api=1&amp;query=Can%20Ros%20Barcelona" target="_blank" rel="noopener noreferrer">Google 地图 ↗</a></span></div><div class="rwrap">
+              <label class="rcard">
+                <input type="radio" name="m:d4-dinner" value="xiringuito">
+                
+                <span class="rbody">
+                  <span class="rtop"><b>Xiringuito Escribà</b>
+                    <span class="rprice">€45–60</span></span>
+                  <span class="rts"><span class="rt none">评分点下面的链接看实时的</span></span>
+                  <span class="rmeta">海鲜 paella · Av. Litoral 62, Bogatell 海滩</span>
+                  <span class="rnote">有海景，海鲜 paella 口碑最好的之一</span>
+                </span></label>
+              <span class="links"><a class="ln-btn" href="https://www.google.com/maps/search/?api=1&amp;query=Xiringuito%20Escrib%C3%A0%20Barcelona" target="_blank" rel="noopener noreferrer">Google 地图 ↗</a></span></div></div></div>
+            <div class="sub"><h4>这天想说什么</h4>
+              <textarea name="n:d4" rows="2" placeholder="想加的、想去掉的、想睡到几点…"></textarea></div>
+          </div></div><div class="day" id="d5">
+          <div class="day-head">
+            <div><div class="dd">10月3日（六）· 出发</div><div class="dt">半天 + 高铁</div></div>
+            <span class="load">轻</span>
+          </div>
+          <div class="day-body">
+            <p class="intro">真实可用约 2 小时 45 分。行李存 Sants 之后再活动，只在 Sants / 西班牙广场范围内走。</p>
+            <ul class="locked"><li><span class="lt">11:00</span><span><b>退房</b> <span class=ln>最晚</span></span></li><li><span class="lt">11:05</span><span><b>出租车 → Sants 车站</b> <span class=ln>已定：打车。约 15 分钟。到站先把行李存进寄物柜，再空手出门</span></span></li><li><span class="lt">15:00</span><span><b>AVE 开往马德里</b> <span class=ln>18:17 抵达 · 提前 20 分钟到站台</span></span></li></ul>
+            
+            
+            <div class="meal-slot"><div class="slot">午餐 <span class="hint">挑一个</span></div><div class="rlist"><div class="rwrap istop">
+              <label class="rcard">
+                <input type="radio" name="m:d5-lunch" value="bodebernat">
+                
+                <span class="rbody">
+                  <span class="rtop"><b>Bo de Bernat</b><span class="star" title="做过详细调研">●</span><span class="toptag">强烈推荐</span>
+                    <span class="rprice">€30–40</span></span>
+                  <span class="rts"><span class="rt goog">Google ★4.3<i>/5</i></span></span>
+                  <span class="rmeta">加泰罗尼亚家常 · Carrer del Comte d&#x27;Urgell 27（Sant Antoni）</span>
+                  <span class="rnote">家族经营，做的是真正的本地菜，不是给游客的版本。主人去过，强力推荐</span>
+                </span></label>
+              <span class="links"><a class="ln-btn" href="https://www.google.com/maps/search/?api=1&amp;query=Bo%20de%20Bernat%20Barcelona" target="_blank" rel="noopener noreferrer">Google 地图 ↗</a></span></div><div class="rwrap">
+              <label class="rcard">
+                <input type="radio" name="m:d5-lunch" value="la-tata">
+                <img class="rthumb" src="img/r-la-tata.jpg" alt="La Tata" loading="lazy" decoding="async">
+                <span class="rbody">
+                  <span class="rtop"><b>La Tata</b><span class="star" title="做过详细调研">●</span>
+                    <span class="rprice">€50</span></span>
+                  <span class="rts"><span class="rt fork">TheFork 9.7<i>/10</i> · 8819 评</span></span>
+                  <span class="rmeta">加泰罗尼亚 · Carrer de Calàbria 69</span>
+                  <span class="rnote">评价数最多、评分最高的一家。适合最后一天收尾</span>
+                </span></label>
+              <span class="links"><a class="ln-btn" href="https://www.thefork.es/restaurante/la-tata-r20163" target="_blank" rel="noopener noreferrer">TheFork ↗</a><a class="ln-btn" href="https://www.google.com/maps/search/?api=1&amp;query=La%20Tata%20Barcelona" target="_blank" rel="noopener noreferrer">Google 地图 ↗</a></span></div><div class="rwrap">
+              <label class="rcard">
+                <input type="radio" name="m:d5-lunch" value="fishology">
+                <img class="rthumb" src="img/r-fishology.jpg" alt="Fishology" loading="lazy" decoding="async">
+                <span class="rbody">
+                  <span class="rtop"><b>Fishology</b><span class="star" title="做过详细调研">●</span>
+                    <span class="rprice">€72</span></span>
+                  <span class="rts"><span class="rt fork">TheFork 9.7<i>/10</i> · 172 评</span></span>
+                  <span class="rmeta">海鲜 · Carrer de la Diputació 73</span>
+                  <span class="rnote">食物分最高（9.8），但评价数少</span>
+                </span></label>
+              <span class="links"><a class="ln-btn" href="https://www.thefork.es/restaurante/fishology-r686999" target="_blank" rel="noopener noreferrer">TheFork ↗</a><a class="ln-btn" href="https://www.google.com/maps/search/?api=1&amp;query=Fishology%20Barcelona" target="_blank" rel="noopener noreferrer">Google 地图 ↗</a></span></div></div></div>
+            <div class="sub"><h4>这天想说什么</h4>
+              <textarea name="n:d5" rows="2" placeholder="想加的、想去掉的、想睡到几点…"></textarea></div>
+          </div></div></section>
+<div class="card chef">
+      <h4>想在住处吃一顿？请厨师上门</h4>
+      <p class="chef-body">公寓有厨房，但不用你们自己做 —— 巴塞有不少上门私厨服务，买菜、做、收拾全包。</p>
+      <div class="warn">实话说预算要往上调一点。市场价大约每人 €20–50（简单菜单）到 €150+（高端）。5 个人 $100–200（约 €90–180）折合每人 €18–36，只够最简单的一档。想吃到像样的 3–4 道菜私厨晚餐，5 人大约要 €225–350。</div>
+      <div class="rlist"><label class="rcard">
+        <input type="radio" name="m:chef" value="上门私厨">
+        <span class="rbody"><span class="rtop"><b>上门私厨</b>
+          <span class="rprice">约 €45–70/人</span></span>
+          <span class="rnote">买菜 + 做 + 收拾全包，菜单可定制。提前几天预约</span></span></label><label class="rcard">
+        <input type="radio" name="m:chef" value="海鲜饭工作坊">
+        <span class="rbody"><span class="rtop"><b>海鲜饭工作坊</b>
+          <span class="rprice">约 €65–115/人</span></span>
+          <span class="rnote">带去波盖利亚市场买菜，回来一起做 paella，然后吃掉。比单纯吃饭有意思</span></span></label><label class="rcard">
+        <input type="radio" name="m:chef" value="直接订一锅 paella 送上门">
+        <span class="rbody"><span class="rtop"><b>直接订一锅 paella 送上门</b>
+          <span class="rprice">约 €20–30/人</span></span>
+          <span class="rnote">最省钱的居家方案，配上火腿和酒就是一桌</span></span></label>
+        <label class="rcard"><input type="radio" name="m:chef" value="skip">
+          <span class="rbody"><span class="rtop"><b>不用，每顿都出去吃</b></span></span></label>
+      </div>
+      <span class="links"><a class="ln-btn" href="https://www.takeachef.com/en-es/private-chef/barcelona" target="_blank" rel="noopener noreferrer">Take a Chef ↗</a><a class="ln-btn" href="https://www.pocapots.es/en/product/private-chef-at-home/" target="_blank" rel="noopener noreferrer">Poc a Pots ↗</a></span></div>
+
+<h2 id="tickets">票</h2>
+<div class="card">
+  <div class="times"><span>9/29（二）16:00 起可入住</span><span>10/3（六）11:00 前退房</span></div>
+</div>
+<div class="card"><div class="bk">
+        <div class="bk-top"><b>圣家堂 + 受难立面塔楼</b><span class="bk-date">9/30（三）</span></div>
+        <div class="bk-time">入场 10:30 · 登塔 11:15</div>
+        <div class="bk-meta">Carrer de la Marina 入口</div>
+        <ul class="bk-notes"><li>入场和登塔只隔 45 分钟 —— 这是圣家堂的标准安排，不是排错了。进门先直奔内部主殿看彩窗，11:05 就去塔楼集合点</li><li>电梯上去，走楼梯下来。螺旋楼梯本身就是景点</li><li>下载官方 App，输入日期+邮箱+预订号可拿免费语音导览</li></ul>
+      </div><div class="bk">
+        <div class="bk-top"><b>巴特罗之家 Casa Batlló</b><span class="bk-date">10/1（四）</span></div>
+        <div class="bk-time">10:15</div>
+        <div class="bk-meta">Passeig de Gràcia 43</div>
+        <ul class="bk-notes"><li>官方说约 1 小时 15 分，实际大多数人走 1.5 小时 —— 按 11:45 出来算</li><li>AR 导览做得极好，别急着往前走</li><li>和米拉之家 13:15 同一天，两栋之间步行 6 分钟</li></ul>
+      </div><div class="bk">
+        <div class="bk-top"><b>米拉之家 La Pedrera</b><span class="bk-date">10/1（四）</span></div>
+        <div class="bk-time">13:15</div>
+        <div class="bk-meta">Carrer de Provença 265 入口</div>
+        <ul class="bk-notes"><li>含免费语音导览</li><li>只允许晚到 15 分钟内入场，过时作废</li><li>下雨时战士屋顶暂停开放，门票不退款</li><li>官方说约 1–1.5 小时，实际大多数人走 1.5–2 小时。建议留 1 小时 45 分</li></ul>
+      </div></div>
+<div class="card">
+  <h4>选完之后要订的</h4>
+  <table><tr><th>项目</th><th>什么时候订</th><th>为什么</th></tr><tr><td><b>桂尔公园</b></td><td>9/30 下午</td><td class="tn">每小时限 1400 人，10 月热门时段提前售罄</td></tr><tr><td><b>毕加索博物馆</b></td><td>定下哪天之后</td><td class="tn">官网建议提前至少一天</td></tr><tr><td><b>Los Tarantos 弗拉门戈</b></td><td>定下哪晚之后</td><td class="tn">场内先到先坐，提前 15–20 分钟到场</td></tr><tr><td><b>加泰罗尼亚音乐宫</b></td><td>想去就尽早</td><td class="tn">只能跟导览进，场次有限</td></tr></table>
+</div>
+
+<h2 id="cut">砍掉的，和原因</h2>
+<div class="card"><div class="drop"><b>诺坎普球场 Camp Nou</b>
+        <div class="dr">球场还在改建。现在只能看博物馆、360° 影厅和施工观景台 —— 球场草皮、球员通道、更衣室都不开放，以前最有名的场边参观也没恢复。位置在 Les Corts，和其他景点都不顺路。四个人花两三小时换一个残缺版本，不值</div><div class="dv">↻ 如果里面有铁杆巴萨球迷，那另说 —— 告诉我，我把 10/2 上午改成诺坎普</div></div><div class="drop"><b>提比达波山 Tibidabo</b>
+        <div class="dr">游乐园 10 月工作日闭园，只开周末。你们在巴塞唯一的周末就是 10/3 出发日，塞不下</div><div class="dv">↻ 山顶教堂可以单独上去（不受游乐园开放日限制），但来回 3 小时，性价比低</div></div><div class="drop"><b>原 10/3 的五个点</b>
+        <div class="dr">原计划把奥林匹克港、海滩、皇家广场、哥特区、波盖利亚全排在出发日。退房 11:00、火车 15:00，带着行李只有约 2 小时 45 分 —— 那是一整天的量</div><div class="dv">↻ 海滩和奥林匹克港已挪到 10/2，哥特区和波盖利亚挪到 10/1</div></div></div>
+
+<h2 id="tips">实用提示</h2>
+<div class="card"><div class="tip"><b>吃饭时间</b><p>西班牙人午餐 13:30–16:00，晚餐 21:00–23:00。20:00 以前进餐厅基本只有游客。很多厨房 16:00–20:00 完全不营业 —— 下午饿了只能找 tapas 吧</p></div><div class="tip"><b>午休（siesta）</b><p>西班牙午饭吃到 15:00–16:00，之后店铺和厨房大多休息到 20:00。与其硬撑，不如跟着当地节奏：午饭后回住处睡 1 小时，19:00 再出门，晚上精神好得多。行程里已经留出这段时间</p></div><div class="tip"><b>交通</b><p>4 个人打车往往比地铁划算，市区内大多 €8–15。地铁单程 €2.65，T-casual 10 次票 €12.55 可多人共用。Uber / Cabify / Free Now 都能用</p></div><div class="tip"><b>小费</b><p>不强制。满意的话留零头或 5%，不留也完全正常</p></div><div class="tip"><b>安全</b><p>巴塞扒手世界闻名，暴力犯罪极少。高危：兰布拉大道、地铁 L3、波盖利亚市场、海滩。手机别放桌上，包别挂椅背</p></div><div class="tip"><b>付款</b><p>刷卡通用，小酒吧可能有 €10 最低消费。建议带 €100 左右现金备用</p></div><div class="tip"><b>急救</b><p>112，全欧洲通用，免费，有中文转接</p></div></div>
+
+<div class="card">
+  <h4>最后还有什么想说的</h4>
+  <textarea name="n:overall" rows="3" placeholder="整体节奏太紧 / 太松？还有什么没写进来？"></textarea>
+</div>
+
+<footer>
+  这页只是用来收集大家的想法 —— 选完点右下角「生成我的选择」，把那段 JSON 复制发回来<br>
+  餐厅名旁的 <span class="star">●</span> 表示做过详细调研 · 住址、预订号、PIN 都不在这页上
+</footer>
+</div>
+
+<div class="dock">
+  <span class="cnt" id="cnt">还没选</span>
+  <button onclick="clearAll()">清空</button>
+  <button class="go" onclick="openOut()">生成我的选择</button>
+</div>
+
+<dialog id="out"><div class="dlg">
+  <h3>两种方式都行，挑一个</h3>
+  <p>① <b>复制</b> —— 微信 / WhatsApp 直接粘贴发回来，最快<br>
+     ② <b>下载文件</b> —— 存成 .json 再当附件转发，长内容不会被截断</p>
+  <div class="row big">
+    <button class="go" onclick="copyOut()">① 复制全部</button>
+    <button class="go" onclick="dlOut()">② 下载 .json 文件</button>
+    <span id="copied" class="tn"></span>
+  </div>
+  <textarea id="outjson" readonly></textarea>
+  <div class="row">
+    <button onclick="document.getElementById('out').close()">关闭</button>
+  </div>
+</div></dialog>
+
+<script type="application/json" id="trip-data">{"meta":{"title":"巴塞罗那行程","subtitle":"2026年9月29日 – 10月3日 · 4人 · 4晚","note":"分三步：先说口味，再挑想去的地方，最后挑吃的。挑完点右下角生成 JSON 发回来。","generated":"20260919","version":5},"feedback":{"schema":"cx-visit-feedback/2","intro":"没选的默认「都行」。不用每一条都表态，把明显想去和明显不想去的点掉就够了。"},"anchor_times":{"checkin":"9/29（二）16:00 起可入住","checkout":"10/3（六）11:00 前退房","base_zone":"住处在 Eixample 区"},"survey":[{"id":"pace","q":"每天想走多少？","opts":[["easy","轻松：一天 2–3 个点，中间要回去躺一下"],["normal","正常：一天 4–5 个点"],["packed","尽量塞满，累点没关系"]]},{"id":"wake","q":"早上几点能出门？","opts":[["early","8 点前"],["mid","9–10 点"],["late","11 点以后"]]},{"id":"museum_stamina","q":"博物馆一天能连看几个？","opts":[["one","一个就够，看多了累"],["two","两个可以"],["many","多多益善"]]},{"id":"dinner","q":"晚餐想怎么吃？","opts":[["casual","随便吃，tapas 小馆就行"],["mixed","大部分随意，挑一两顿吃好的"],["nice","每顿都想吃好的"]]},{"id":"interest","q":"最想要哪些？（可多选）","multi":true,"opts":[["arch","高迪和现代主义建筑"],["museum","博物馆美术馆"],["food","吃，吃是重点"],["beach","海滩放空"],["view","登高看全城"],["local","本地生活、老街区"],["shop","购物"],["night","夜生活、演出"]]}],"zones":{"A":"圣家堂 / 上 Eixample","B":"格拉西亚大道 Passeig de Gràcia","C":"桂尔公园 / Gràcia / Carmel","D":"哥特区 / 兰布拉 / Raval","E":"博恩 / 城堡公园 / 海边","F":"蒙特惠奇 / 西班牙广场","G":"格洛里耶斯 Glòries（较远）"},"attractions":[{"id":"sagrada","name":"圣家堂 + 受难立面塔楼","zone":"A","cat":"建筑","min":120,"why":"彩窗是全世界独一份。上午东侧蓝绿光，下午西侧橙红光","ticket":"已订","tag":"锁定"},{"id":"santpau","name":"圣保罗医院 Recinte Modernista","zone":"A","cat":"建筑","min":75,"why":"另一个世界遗产，多梅内克的现代主义建筑群。游客比圣家堂少得多。从圣家堂走 10 分钟","ticket":null,"tag":"冷门好货"},{"id":"avgaudi","name":"Av. Gaudí 林荫步行街","zone":"A","cat":"街区","min":30,"why":"拍圣家堂全景最好的角度，路上有几家不错的小店","ticket":null,"tag":"顺路"},{"id":"pedrera","name":"米拉之家 La Pedrera","zone":"B","cat":"建筑","min":105,"why":"蝴蝶中庭、战士屋顶烟囱、阁楼抛物线拱","ticket":"已订","tag":"锁定"},{"id":"batllo","name":"巴特罗之家 Casa Batlló","zone":"B","cat":"建筑","min":90,"why":"高迪最像海洋生物的一栋，AR 导览做得极好","ticket":"已订","tag":"锁定"},{"id":"pgshop","name":"Passeig de Gràcia 逛街","zone":"B","cat":"街区","min":60,"why":"Zara 全球旗舰店、Loewe 总店都在这条街","ticket":null,"tag":null},{"id":"tapies","name":"塔皮埃斯基金会","zone":"B","cat":"博物馆","min":60,"why":"多梅内克设计的老出版社厂房，楼顶那团铁丝是地标。当代艺术，人少","ticket":null,"tag":null},{"id":"guell","name":"桂尔公园 纪念区","zone":"C","cat":"建筑","min":120,"why":"马赛克蜥蜴、百柱厅、蛇形长椅。10 月最后入场 18:30，19:30 闭园","ticket":"需订票","tag":"推荐"},{"id":"tibidabo_view","name":"提比达波 圣心教堂观景台","zone":"C","cat":"景观","min":180,"ticket":"电梯 €4","why":"全城最高点 512 米，比市区那几个网红观景台都高，人也少得多。教堂每天 08:00–20:15 免费进，只有上塔电梯要买票（17:30 前到）。游乐园 10 月工作日不开，但观景区照常开放。工作日上山要绕路：FGC 到 Peu del Funicular → Vallvidrera 缆车 → 111 路公交，单程约 1 小时","tag":"半天"},{"id":"gracia","name":"Gràcia 老城区闲逛","zone":"C","cat":"街区","min":75,"why":"独立小镇气质，几个小广场，本地人多过游客","ticket":null,"tag":"推荐"},{"id":"vicens","name":"维森斯之家 Casa Vicens","zone":"C","cat":"建筑","min":60,"why":"高迪的第一栋房子，瓷砖外墙完全不像他后来的风格。排队的人很少","ticket":null,"tag":"冷门好货"},{"id":"gothic","name":"哥特区漫步","zone":"D","cat":"街区","min":75,"why":"大教堂、国王广场、Sant Felip Neri（墙上还留着内战弹痕）、主教桥","ticket":null,"tag":"推荐"},{"id":"catedral","name":"巴塞罗那大教堂","zone":"D","cat":"建筑","min":40,"why":"屋顶可以上去，回廊里养着 13 只鹅","ticket":null,"tag":null},{"id":"muhba","name":"MUHBA 地下罗马城","zone":"D","cat":"博物馆","min":60,"why":"走在两千年前的罗马街道上，有洗衣作坊、鱼酱厂、酿酒设施。大多数游客不知道","ticket":null,"tag":"冷门好货"},{"id":"mares","name":"弗雷德里克·马雷斯博物馆","zone":"D","cat":"博物馆","min":60,"why":"一个收藏狂的私人收藏：中世纪雕塑加几万件日常小物。院子里的咖啡座是老城最舒服的角落之一","ticket":null,"tag":"冷门好货"},{"id":"boqueria","name":"波盖利亚市场","zone":"D","cat":"市场","min":45,"why":"鲜榨果汁、火腿、市场里的小吧台。20:30 关门，周日不开","ticket":null,"tag":"顺路"},{"id":"maritim","name":"海事博物馆 Museu Marítim","zone":"D","cat":"博物馆","min":75,"why":"中世纪皇家船厂改建，里面停着一艘等比复原的加莱战船。建筑本身就值票价","ticket":null,"tag":"冷门好货"},{"id":"macba","name":"MACBA 当代艺术馆","zone":"D","cat":"博物馆","min":75,"why":"Richard Meier 的白色方盒子。门口广场是全欧洲有名的滑板圣地","ticket":null,"tag":null},{"id":"palau","name":"加泰罗尼亚音乐宫","zone":"D","cat":"建筑","min":75,"why":"世界遗产。彩色玻璃穹顶从天花板垂下来，只能跟导览进。也可以直接买场音乐会","ticket":null,"tag":"推荐"},{"id":"tarantos","name":"Los Tarantos 弗拉门戈","zone":"D","cat":"演出","min":40,"why":"1963 年开业，巴塞最老的 tablao。每晚四场 17:30 / 18:30 / 19:30 / 20:30","ticket":"需订票","tag":"推荐"},{"id":"picasso","name":"毕加索博物馆","zone":"E","cat":"博物馆","min":90,"why":"收藏以毕加索青年时期为主，和别处的毕加索馆完全不一样。周一闭馆","ticket":"需订票","tag":"推荐"},{"id":"xocolata","name":"巧克力博物馆","zone":"E","cat":"博物馆","min":60,"why":"门票是一块能吃的巧克力。里面有整座巧克力雕塑。离毕加索馆走 4 分钟","ticket":null,"tag":"推荐"},{"id":"moco","name":"Moco 现代艺术馆","zone":"E","cat":"博物馆","min":75,"why":"班克斯、草间弥生、KAWS。在一栋 16 世纪老宅里，反差很有意思","ticket":null,"tag":null},{"id":"santamaria","name":"海洋圣母教堂 Santa Maria del Mar","zone":"E","cat":"建筑","min":30,"why":"加泰罗尼亚哥特式的极致，《海上大教堂》写的就是它。登顶要另买票","ticket":null,"tag":null},{"id":"bornccm","name":"博恩文化记忆中心 El Born CCM","zone":"E","cat":"博物馆","min":45,"why":"老铁市场底下挖出了 1700 年被拆掉的整片街区，就地保留。进遗址区免费","ticket":null,"tag":"冷门好货"},{"id":"ciutadella","name":"凯旋门 + 城堡公园","zone":"E","cat":"街区","min":45,"why":"1888 年世博会正门，红砖摩尔风格。公园里可以划船","ticket":null,"tag":null},{"id":"beach","name":"巴塞罗内塔海滩","zone":"E","cat":"海滩","min":120,"why":"10 月初水温还能下。沙滩椅要另付钱","ticket":null,"tag":null},{"id":"portolimpic","name":"海滨步道走到奥林匹克港","zone":"E","cat":"景观","min":45,"why":"会经过 Frank Gehry 的金色大鱼雕塑","ticket":null,"tag":null},{"id":"mnac","name":"MNAC 加泰罗尼亚国家艺术博物馆","zone":"F","cat":"博物馆","min":120,"why":"全世界最好的罗马式壁画收藏 —— 整座教堂的壁画被切下来搬进馆里。不进馆也能上露台看全城","ticket":null,"tag":"推荐"},{"id":"miro","name":"米罗基金会","zone":"F","cat":"博物馆","min":75,"why":"米罗本人捐建，Josep Lluís Sert 设计。建筑和作品一样好","ticket":null,"tag":null},{"id":"poble","name":"西班牙村 Poble Espanyol","zone":"F","cat":"街区","min":90,"why":"1929 世博会造的「全西班牙建筑缩影村」，有点做作但好逛好拍","ticket":null,"tag":null},{"id":"castell","name":"蒙特惠奇城堡 + 缆车","zone":"F","cat":"景观","min":120,"why":"山顶要塞，俯瞰整个港口。缆车本身就是体验","ticket":null,"tag":null},{"id":"fountain","name":"魔幻喷泉","zone":"F","cat":"演出","min":30,"why":"10 月只在周四五六 21:00 / 21:30，10/11 起停演维护到 12/21。免费，人非常多","ticket":null,"tag":"限时"},{"id":"arenas","name":"Las Arenas 斗牛场顶楼","zone":"F","cat":"景观","min":30,"why":"1900 年斗牛场改建，环形露台免费，俯瞰西班牙广场","ticket":null,"tag":"省力"},{"id":"disseny","name":"设计博物馆 Museu del Disseny","zone":"G","cat":"博物馆","min":90,"why":"四个馆合一：平面设计、工业设计、时装、装饰艺术。建筑像一个巨大的订书机","ticket":null,"tag":null},{"id":"glories","name":"阿格巴塔 Torre Glòries 外观","zone":"G","cat":"建筑","min":15,"why":"努维尔那根子弹形状的彩色塔。晚上会变色。在设计博物馆对面","ticket":null,"tag":"顺路"},{"id":"encants","name":"恩坎茨跳蚤市场 Els Encants","zone":"G","cat":"市场","min":45,"why":"欧洲最老的跳蚤市场之一，金色镜面天花板下的露天旧货摊。周一三五六开","ticket":null,"tag":null}],"booked":[{"name":"圣家堂 + 受难立面塔楼","date":"9/30（三）","time":"入场 10:30 · 登塔 11:15","entrance":"Carrer de la Marina 入口","notes":["入场和登塔只隔 45 分钟 —— 这是圣家堂的标准安排，不是排错了。进门先直奔内部主殿看彩窗，11:05 就去塔楼集合点","电梯上去，走楼梯下来。螺旋楼梯本身就是景点","下载官方 App，输入日期+邮箱+预订号可拿免费语音导览"]},{"name":"巴特罗之家 Casa Batlló","date":"10/1（四）","time":"10:15","entrance":"Passeig de Gràcia 43","notes":["官方说约 1 小时 15 分，实际大多数人走 1.5 小时 —— 按 11:45 出来算","AR 导览做得极好，别急着往前走","和米拉之家 13:15 同一天，两栋之间步行 6 分钟"]},{"name":"米拉之家 La Pedrera","date":"10/1（四）","time":"13:15","entrance":"Carrer de Provença 265 入口","notes":["含免费语音导览","只允许晚到 15 分钟内入场，过时作废","下雨时战士屋顶暂停开放，门票不退款","官方说约 1–1.5 小时，实际大多数人走 1.5–2 小时。建议留 1 小时 45 分"]}],"tobook":[{"name":"桂尔公园","when":"9/30 下午","why":"每小时限 1400 人，10 月热门时段提前售罄"},{"name":"毕加索博物馆","when":"定下哪天之后","why":"官网建议提前至少一天"},{"name":"Los Tarantos 弗拉门戈","when":"定下哪晚之后","why":"场内先到先坐，提前 15–20 分钟到场"},{"name":"加泰罗尼亚音乐宫","when":"想去就尽早","why":"只能跟导览进，场次有限"}],"days":[{"id":"d1","date":"9月29日（二）","theme":"抵达","load":"轻","intro":"飞了 20 多小时。目标只有两个：把行李放下，撑到当地时间 23:00 再睡。","locked":[{"time":"15:05","name":"落地 BCN T1","note":"过关取行李约 40 分钟"},{"time":"约 15:45","name":"出租车 → 住处","note":"已定：打车。T1 到达层外有出租车站，4 人带行李约 €35–40，35 分钟"},{"time":"16:00 起","name":"可入住","note":""}],"meals":{"dinner":["windsor","deliri","petit-muu"]}},{"id":"d2","date":"9月30日（三）","theme":"圣家堂已锁上午","load":"中","intro":"上午被票锁死，12:30 之后全天自由。桂尔公园离圣家堂打车只要 12 分钟，是顺路的。","locked":[{"time":"10:30","name":"圣家堂入场","note":"已订"},{"time":"11:15","name":"受难立面塔楼","note":"已订"}],"meals":{"lunch":["elglop","bardeni","cafe-del-centre"],"dinner":["ipar-txoko","cafe-pages","lluritu"]},"siesta":"午饭后回住处午休 1 小时再出门 —— 下午的桂尔公园要走不少路。"},{"id":"d3","date":"10月1日（四）","theme":"两栋高迪之家 + 老城","load":"重","intro":"全程最满的一天：两栋高迪之家都在今天，中间隔 1.5 小时。别想在两馆之间吃正经午饭 —— 西班牙厨房 13:00 才开，12:00 进店只有游客菜单。中间喝杯咖啡、逛 Passeig de Gràcia 就好，15:00 从米拉之家出来再正式吃午饭，这才是本地人的时间。","locked":[{"time":"10:15","name":"巴特罗之家 Casa Batlló","note":"已订 · 约 11:45 出来"},{"time":"13:15","name":"米拉之家 La Pedrera","note":"已订 · 只允许晚到 15 分钟内 · 约 15:00 出来"}],"meals":{"lunch":["petit-muu","cafe-del-centre"],"dinner":["cera23","cafe-academia","bar-la-plata"]},"siesta":"15:00 吃完午饭已经接近 16:30 —— 回住处睡一觉，19:00 再出门去老城和弗拉门戈。","gap":{"title":"10:15 → 13:15 中间这 1.5 小时怎么过","items":["11:45 从巴特罗之家出来，走 6 分钟到米拉之家门口先认路","Passeig de Gràcia 逛街（Zara 旗舰店、Loewe 总店都在这条街）","找家咖啡馆吃个可颂垫一下 —— 正餐留到 15:00","13:00 前回到 Provença 265 排队入场"]}},{"id":"d4","date":"10月2日（五）","theme":"全天自由","load":"看你们选","intro":"唯一一整天没有任何锁的日子。魔幻喷泉只有这天能看（10/11 起停演维护）。","locked":[],"meals":{"lunch":["barcelona-grill","bar-del-pla"],"dinner":["pampagrill","can-sole","can-ros","xiringuito"]},"siesta":"全天自由。中午吃完回去睡个午觉最舒服，傍晚再出门。"},{"id":"d5","date":"10月3日（六）· 出发","theme":"半天 + 高铁","load":"轻","intro":"真实可用约 2 小时 45 分。行李存 Sants 之后再活动，只在 Sants / 西班牙广场范围内走。","locked":[{"time":"11:00","name":"退房","note":"最晚"},{"time":"11:05","name":"出租车 → Sants 车站","note":"已定：打车。约 15 分钟。到站先把行李存进寄物柜，再空手出门"},{"time":"15:00","name":"AVE 开往马德里","note":"18:17 抵达 · 提前 20 分钟到站台"}],"meals":{"lunch":["bodebernat","la-tata","fishology"]}}],"restaurants":{"windsor":{"name":"Windsor","cuisine":"当代加泰罗尼亚","price":"€44","reviews":"2080","addr":"Carrer de Còrsega 286","zone":"家门口","note":"离住的地方很近。第一晚不折腾的首选","researched":true,"fork_rating":"9.4","google_rating":null,"links":[{"label":"TheFork","url":"https://www.thefork.es/restaurante/windsor-r24114"},{"label":"Google 地图","url":"https://www.google.com/maps/search/?api=1&query=Windsor%20Barcelona"}]},"deliri":{"name":"Deliri","cuisine":"加泰罗尼亚","price":"€45","reviews":"957","addr":"Carrer de Còrsega 242","zone":"家门口","note":"同一条街，风格更现代","researched":true,"fork_rating":"9.3","google_rating":null,"links":[{"label":"TheFork","url":"https://www.thefork.es/restaurante/deliri-r705133"},{"label":"Google 地图","url":"https://www.google.com/maps/search/?api=1&query=Deliri%20Barcelona"}]},"petit-muu":{"name":"Petit Muu","cuisine":"融合菜","price":"€23","reviews":"776","addr":"Pl. del Dr. Letamendi 28","zone":"Eixample","note":"便宜好吃，下午还有行程时的理想午餐","researched":true,"fork_rating":"9.4","google_rating":null,"links":[{"label":"TheFork","url":"https://www.thefork.es/restaurante/petit-muu-r842827"},{"label":"Google 地图","url":"https://www.google.com/maps/search/?api=1&query=Petit%20Muu%20Barcelona"}]},"speakeasy":{"name":"Speakeasy","cuisine":"西班牙","price":"€80","reviews":"2629","addr":"Carrer d'Aribau 162","zone":"Eixample","note":"藏在 Dry Martini 酒吧后面。想吃一顿正式的就这家","researched":true,"fork_rating":"9.7","google_rating":null,"links":[{"label":"TheFork","url":"https://www.thefork.es/restaurante/speakeasy-r20610"},{"label":"Google 地图","url":"https://www.google.com/maps/search/?api=1&query=Speakeasy%20Barcelona"}]},"la-tata":{"name":"La Tata","cuisine":"加泰罗尼亚","price":"€50","reviews":"8819","addr":"Carrer de Calàbria 69","zone":"Eixample 西","note":"评价数最多、评分最高的一家。适合最后一天收尾","researched":true,"fork_rating":"9.7","google_rating":null,"links":[{"label":"TheFork","url":"https://www.thefork.es/restaurante/la-tata-r20163"},{"label":"Google 地图","url":"https://www.google.com/maps/search/?api=1&query=La%20Tata%20Barcelona"}]},"fishology":{"name":"Fishology","cuisine":"海鲜","price":"€72","reviews":"172","addr":"Carrer de la Diputació 73","zone":"Eixample 西","note":"食物分最高（9.8），但评价数少","researched":true,"fork_rating":"9.7","google_rating":null,"links":[{"label":"TheFork","url":"https://www.thefork.es/restaurante/fishology-r686999"},{"label":"Google 地图","url":"https://www.google.com/maps/search/?api=1&query=Fishology%20Barcelona"}]},"barcelona-grill":{"name":"Barcelona Grill","cuisine":"阿根廷烤肉","price":"€20","reviews":"316","addr":"Carrer del Rec Comtal 7","zone":"博恩 / 凯旋门","note":"性价比极高，适合博恩区那天的午餐","researched":true,"fork_rating":"9.7","google_rating":null,"links":[{"label":"TheFork","url":"https://www.thefork.es/restaurante/barcelona-grill-steak-house-r853204"},{"label":"Google 地图","url":"https://www.google.com/maps/search/?api=1&query=Barcelona%20Grill%20Barcelona"}]},"antigua":{"name":"Antigua","cuisine":"卡斯蒂利亚","price":"€30","reviews":"41563","addr":"Carrer de Maria Cubí 59","zone":"Sant Gervasi / Gràcia 边","note":"四万多条评价，价格中等。高峰期比较吵","researched":true,"fork_rating":"9.4","google_rating":null,"links":[{"label":"TheFork","url":"https://www.thefork.es/restaurante/antigua-r1567"},{"label":"Google 地图","url":"https://www.google.com/maps/search/?api=1&query=Antigua%20Barcelona"}]},"bardeni":{"name":"Bardeni","cuisine":"肉食酒馆","price":"€30–40","reviews":null,"addr":"Carrer de València 454","zone":"圣家堂旁","note":"炸丸子和伊比利亚烤肉出名，客人以本地人为主","researched":false,"fork_rating":null,"google_rating":null,"links":[{"label":"Google 地图","url":"https://www.google.com/maps/search/?api=1&query=Bardeni%20Barcelona"}]},"cafe-del-centre":{"name":"Cafè del Centre","cuisine":"加泰家常","price":"€25–35","reviews":null,"addr":"Carrer de Girona 69","zone":"圣家堂 / Eixample","note":"1873 年的老咖啡馆，内部原样保留","researched":false,"fork_rating":null,"google_rating":null,"links":[{"label":"Google 地图","url":"https://www.google.com/maps/search/?api=1&query=Caf%C3%A8%20del%20Centre%20Barcelona"}]},"ipar-txoko":{"name":"Ipar-Txoko","cuisine":"巴斯克","price":"€40–50","reviews":null,"addr":"Gràcia 区","zone":"Gràcia","note":"老板口头报当日菜单。招牌 T 骨牛排、鳕鱼蛋饼。几乎没游客","researched":false,"fork_rating":null,"google_rating":null,"links":[{"label":"Google 地图","url":"https://www.google.com/maps/search/?api=1&query=Ipar-Txoko%20Barcelona"}]},"cafe-pages":{"name":"Café Pagès","cuisine":"加泰家常","price":"€30–40","reviews":null,"addr":"Gràcia 区","zone":"Gràcia","note":"简单的加泰菜做到极好，本地人多","researched":false,"fork_rating":null,"google_rating":null,"links":[{"label":"Google 地图","url":"https://www.google.com/maps/search/?api=1&query=Caf%C3%A9%20Pag%C3%A8s%20Barcelona"}]},"lluritu":{"name":"Lluritu","cuisine":"海鲜小馆","price":"€25–35","reviews":null,"addr":"Gràcia 区","zone":"Gràcia","note":"每日换菜单，随意不拘，海鲜 tapas 为主","researched":false,"fork_rating":null,"google_rating":null,"links":[{"label":"Google 地图","url":"https://www.google.com/maps/search/?api=1&query=Lluritu%20Barcelona"}]},"cafe-academia":{"name":"Cafè de l'Acadèmia","cuisine":"传统加泰罗尼亚","price":"€35–45","reviews":null,"addr":"Plaça de Sant Just","zone":"哥特区","note":"藏在安静小广场上，哥特区里少见的好馆子。一定要订位","researched":false,"fork_rating":null,"google_rating":null,"links":[{"label":"Google 地图","url":"https://www.google.com/maps/search/?api=1&query=Caf%C3%A8%20de%20l%27Acad%C3%A8mia%20Barcelona"}]},"bar-la-plata":{"name":"Bar la Plata","cuisine":"老式 tapas","price":"€10–15","reviews":null,"addr":"Carrer de la Mercè 28","zone":"哥特区","note":"1945 年开业，只有 4 样 tapas，站着吃。炸小鱼是招牌","researched":false,"fork_rating":null,"google_rating":null,"links":[{"label":"Google 地图","url":"https://www.google.com/maps/search/?api=1&query=Bar%20la%20Plata%20Barcelona"}]},"bar-del-pla":{"name":"Bar del Pla","cuisine":"加泰 tapas","price":"€30–40","reviews":null,"addr":"Carrer de Montcada 2","zone":"博恩","note":"就在毕加索博物馆那条街上，出来直接吃","researched":false,"fork_rating":null,"google_rating":null,"links":[{"label":"Google 地图","url":"https://www.google.com/maps/search/?api=1&query=Bar%20del%20Pla%20Barcelona"}]},"can-sole":{"name":"Can Solé","cuisine":"海鲜饭","price":"€45–60","reviews":null,"addr":"Carrer de Sant Carles 4","zone":"巴塞罗内塔","note":"1903 年开业，同一家族做到第四代。招牌墨鱼汁黑米饭","researched":false,"fork_rating":null,"google_rating":null,"links":[{"label":"Google 地图","url":"https://www.google.com/maps/search/?api=1&query=Can%20Sol%C3%A9%20Barcelona"}]},"can-ros":{"name":"Can Ros","cuisine":"海鲜饭","price":"€40–55","reviews":null,"addr":"Carrer de l'Almirall Aixada 7","zone":"巴塞罗内塔","note":"老派，本地人认的那家。墨鱼洋蓟黑米饭","researched":false,"fork_rating":null,"google_rating":null,"links":[{"label":"Google 地图","url":"https://www.google.com/maps/search/?api=1&query=Can%20Ros%20Barcelona"}]},"xiringuito":{"name":"Xiringuito Escribà","cuisine":"海鲜 paella","price":"€45–60","reviews":null,"addr":"Av. Litoral 62, Bogatell 海滩","zone":"海边","note":"有海景，海鲜 paella 口碑最好的之一","researched":false,"fork_rating":null,"google_rating":null,"links":[{"label":"Google 地图","url":"https://www.google.com/maps/search/?api=1&query=Xiringuito%20Escrib%C3%A0%20Barcelona"}]},"cera23":{"name":"Cera 23","cuisine":"西班牙创意菜","price":"€35–45","reviews":null,"addr":"Carrer de la Cera 23（Raval / Sant Antoni）","zone":"老城 Raval","note":"招牌是火山黑米饭（上桌点火）。主人去过，强力推荐。位子少，一定要提前订","researched":true,"top":true,"fork_rating":null,"google_rating":"4.7","links":[{"label":"TheFork","url":"https://www.thefork.com/restaurant/cera-23-r343905"},{"label":"Google 地图","url":"https://www.google.com/maps/search/?api=1&query=Cera%2023%20Barcelona"}]},"bodebernat":{"name":"Bo de Bernat","cuisine":"加泰罗尼亚家常","price":"€30–40","reviews":null,"addr":"Carrer del Comte d'Urgell 27（Sant Antoni）","zone":"Eixample 西 / Sant Antoni","note":"家族经营，做的是真正的本地菜，不是给游客的版本。主人去过，强力推荐","researched":true,"top":true,"fork_rating":null,"google_rating":"4.3","links":[{"label":"Google 地图","url":"https://www.google.com/maps/search/?api=1&query=Bo%20de%20Bernat%20Barcelona"}]},"pampagrill":{"name":"Pampa Grill Asador Argentino","cuisine":"阿根廷炭烤 asado","price":"€30–45","reviews":null,"addr":"Carrer de Villarroel 88（Eixample）","zone":"Eixample 西 / Sant Antoni","note":"主人去过好几次，强力推荐。整块炭烤牛肉配 chimichurri。巴塞好几家阿根廷烤肉 Google 评分都在 4.8 以上，这家是亲测过的那家","researched":true,"top":true,"fork_rating":"9.2","google_rating":null,"links":[{"label":"TheFork","url":"https://www.thefork.com/restaurant/pampa-grill-r819058"},{"label":"Google 地图","url":"https://www.google.com/maps/search/?api=1&query=Pampa%20Grill%20Asador%20Argentino%20Barcelona"}]},"elglop":{"name":"El Glop Gaudí","cuisine":"加泰炭烤 graella","price":"€25–35","reviews":null,"addr":"Carrer de València 443（圣家堂旁）","zone":"圣家堂旁","note":"老牌加泰炭烤店，就在圣家堂边上。烤肉、烤蔬菜、海鲜饭都稳，份量大，人多也坐得下","researched":false,"fork_rating":null,"google_rating":"4.7","links":[{"label":"Google 地图","url":"https://www.google.com/maps/search/?api=1&query=El%20Glop%20Gaud%C3%AD%20Barcelona"}]}},"dropped":[{"name":"诺坎普球场 Camp Nou","reason":"球场还在改建。现在只能看博物馆、360° 影厅和施工观景台 —— 球场草皮、球员通道、更衣室都不开放，以前最有名的场边参观也没恢复。位置在 Les Corts，和其他景点都不顺路。四个人花两三小时换一个残缺版本，不值","revisit":"如果里面有铁杆巴萨球迷，那另说 —— 告诉我，我把 10/2 上午改成诺坎普"},{"name":"提比达波山 Tibidabo","reason":"游乐园 10 月工作日闭园，只开周末。你们在巴塞唯一的周末就是 10/3 出发日，塞不下","revisit":"山顶教堂可以单独上去（不受游乐园开放日限制），但来回 3 小时，性价比低"},{"name":"原 10/3 的五个点","reason":"原计划把奥林匹克港、海滩、皇家广场、哥特区、波盖利亚全排在出发日。退房 11:00、火车 15:00，带着行李只有约 2 小时 45 分 —— 那是一整天的量","revisit":"海滩和奥林匹克港已挪到 10/2，哥特区和波盖利亚挪到 10/1"}],"tips":[{"title":"吃饭时间","body":"西班牙人午餐 13:30–16:00，晚餐 21:00–23:00。20:00 以前进餐厅基本只有游客。很多厨房 16:00–20:00 完全不营业 —— 下午饿了只能找 tapas 吧"},{"title":"午休（siesta）","body":"西班牙午饭吃到 15:00–16:00，之后店铺和厨房大多休息到 20:00。与其硬撑，不如跟着当地节奏：午饭后回住处睡 1 小时，19:00 再出门，晚上精神好得多。行程里已经留出这段时间"},{"title":"交通","body":"4 个人打车往往比地铁划算，市区内大多 €8–15。地铁单程 €2.65，T-casual 10 次票 €12.55 可多人共用。Uber / Cabify / Free Now 都能用"},{"title":"小费","body":"不强制。满意的话留零头或 5%，不留也完全正常"},{"title":"安全","body":"巴塞扒手世界闻名，暴力犯罪极少。高危：兰布拉大道、地铁 L3、波盖利亚市场、海滩。手机别放桌上，包别挂椅背"},{"title":"付款","body":"刷卡通用，小酒吧可能有 €10 最低消费。建议带 €100 左右现金备用"},{"title":"急救","body":"112，全欧洲通用，免费，有中文转接"}],"chef":{"title":"想在住处吃一顿？请厨师上门","body":"公寓有厨房，但不用你们自己做 —— 巴塞有不少上门私厨服务，买菜、做、收拾全包。","reality":"实话说预算要往上调一点。市场价大约每人 €20–50（简单菜单）到 €150+（高端）。5 个人 $100–200（约 €90–180）折合每人 €18–36，只够最简单的一档。想吃到像样的 3–4 道菜私厨晚餐，5 人大约要 €225–350。","options":[{"name":"上门私厨","detail":"买菜 + 做 + 收拾全包，菜单可定制。提前几天预约","price":"约 €45–70/人"},{"name":"海鲜饭工作坊","detail":"带去波盖利亚市场买菜，回来一起做 paella，然后吃掉。比单纯吃饭有意思","price":"约 €65–115/人"},{"name":"直接订一锅 paella 送上门","detail":"最省钱的居家方案，配上火腿和酒就是一桌","price":"约 €20–30/人"}],"links":[{"label":"Take a Chef","url":"https://www.takeachef.com/en-es/private-chef/barcelona"},{"label":"Poc a Pots","url":"https://www.pocapots.es/en/product/private-chef-at-home/"}],"pick_name":"chef"}}</script>
+<script>
+const DATA = JSON.parse(document.getElementById('trip-data').textContent);
+const KEY = 'cx-visit-picks-v2';
+
+function collect() {
+  const o = {
+    schema: DATA.feedback.schema,
+    itinerary_version: DATA.meta.version,
+    who: document.getElementById('who').value.trim(),
+    at: new Date().toISOString(),
+    survey: {}, activities: {}, meals: {}, notes: {}
+  };
+  document.querySelectorAll('input[name^="s:"]').forEach(i => {
+    if (!i.checked) return;
+    const k = i.name.slice(2);
+    if (i.type === 'checkbox') (o.survey[k] = o.survey[k] || []).push(i.value);
+    else o.survey[k] = i.value;
+  });
+  document.querySelectorAll('input[name^="a:"]:checked')
+    .forEach(i => o.activities[i.name.slice(2)] = i.value);
+  document.querySelectorAll('input[name^="m:"]:checked')
+    .forEach(i => o.meals[i.name.slice(2)] = i.value);
+  document.querySelectorAll('textarea[name^="n:"]').forEach(t => {
+    if (t.value.trim()) o.notes[t.name.slice(2)] = t.value.trim();
+  });
+  return o;
+}
+
+function counts() {
+  const o = collect();
+  const yes = Object.values(o.activities).filter(v => v === 'yes').length;
+  const no = Object.values(o.activities).filter(v => v === 'no').length;
+  const sv = Object.keys(o.survey).length, ml = Object.keys(o.meals).length;
+  document.getElementById('cnt').textContent =
+    (yes || no || sv || ml) ? `口味 ${sv}/5 · 想去 ${yes} · 不去 ${no} · 餐 ${ml}` : '还没选';
+}
+
+function save() { try { localStorage.setItem(KEY, JSON.stringify(collect())); } catch (e) {} }
+function restore() {
+  let s; try { s = JSON.parse(localStorage.getItem(KEY) || 'null'); } catch (e) {}
+  if (!s) return;
+  document.getElementById('who').value = s.who || '';
+  const tick = (pfx, k, v) => {
+    const el = document.querySelector(`input[name="${pfx}:${k}"][value="${CSS.escape(v)}"]`);
+    if (el) el.checked = true;
+  };
+  Object.entries(s.survey || {}).forEach(([k, v]) =>
+    (Array.isArray(v) ? v : [v]).forEach(x => tick('s', k, x)));
+  Object.entries(s.activities || {}).forEach(([k, v]) => tick('a', k, v));
+  Object.entries(s.meals || {}).forEach(([k, v]) => tick('m', k, v));
+  Object.entries(s.notes || {}).forEach(([k, v]) => {
+    const t = document.querySelector(`textarea[name="n:${k}"]`);
+    if (t) t.value = v;
+  });
+}
+
+document.addEventListener('change', () => { save(); counts(); });
+document.addEventListener('input', ev => {
+  if (ev.target.matches('textarea,#who')) { save(); counts(); }
+});
+
+document.querySelectorAll('.fchip').forEach(b => b.addEventListener('click', () => {
+  document.querySelectorAll('.fchip').forEach(x => x.classList.toggle('on', x === b));
+  const cat = b.dataset.cat;
+  document.querySelectorAll('.opt[data-cat]').forEach(o =>
+    o.classList.toggle('hide', !!cat && o.dataset.cat !== cat));
+  document.querySelectorAll('.zgroup').forEach(g =>
+    g.style.display = g.querySelector('.opt:not(.hide)') ? '' : 'none');
+}));
+
+function clearAll() {
+  document.querySelectorAll('input[type=radio],input[type=checkbox]').forEach(i => i.checked = false);
+  document.querySelectorAll('textarea').forEach(t => t.value = '');
+  save(); counts();
+}
+function openOut() {
+  document.getElementById('outjson').value = JSON.stringify(collect(), null, 2);
+  document.getElementById('copied').textContent = '';
+  document.getElementById('out').showModal();
+}
+function copyOut() {
+  const ta = document.getElementById('outjson');
+  const done = () => document.getElementById('copied').textContent = '已复制 ✓';
+  if (navigator.clipboard) navigator.clipboard.writeText(ta.value).then(done, () => {
+    ta.select(); document.execCommand('copy'); done();
+  });
+  else { ta.select(); document.execCommand('copy'); done(); }
+}
+function dlOut() {
+  const o = collect();
+  const nm = (o.who || 'picks').replace(/[^\w\u4e00-\u9fa5-]/g, '') || 'picks';
+  const a = document.createElement('a');
+  a.href = URL.createObjectURL(new Blob([JSON.stringify(o, null, 2)], {type: 'application/json'}));
+  a.download = `barcelona-${nm}.json`;
+  document.body.appendChild(a); a.click(); a.remove();
+  setTimeout(() => URL.revokeObjectURL(a.href), 4000);
+}
+function paintTheme(t) {
+  if (t === 'auto') delete document.documentElement.dataset.theme;
+  else document.documentElement.dataset.theme = t;
+  document.querySelectorAll('#theme button').forEach(b => b.classList.toggle('on', b.dataset.t === t));
+}
+(function themeInit() {
+  var cur = 'auto';
+  try { cur = localStorage.getItem('cx-visit-theme') || 'auto'; } catch (e) {}
+  paintTheme(cur);
+  document.querySelectorAll('#theme button').forEach(b => b.addEventListener('click', () => {
+    paintTheme(b.dataset.t);
+    try { localStorage.setItem('cx-visit-theme', b.dataset.t); } catch (e) {}
+  }));
+})();
+
+restore(); counts();
+</script>
+</body>
+</html>
